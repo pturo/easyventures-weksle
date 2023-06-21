@@ -24,12 +24,12 @@
         <header class="header">
             <div class="container">
                 <div class="row" id="header_1">
-                    <div class="col-width-30">
+                    <div class="padding-15">
                         <div class="logo">
                             <a href="/">Na Weksel</a>
                         </div>
                     </div>
-                    <div class="col-width-70">
+                    <div class="padding-15">
                         <div class="nav-wrapper">
                             <nav>
                                 <ul class="nav-menu">
@@ -70,6 +70,17 @@
                                 </div>
                                 <p>Głogowska 31/33, 60-702 Poznań, Polska</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="designed-by padding-15">
+                        <div class="sdf">
+                            <span>Strona stworzona przez: <a href="">Agencja Digitalowa</a></span>
+                        </div>
+                        <div class="privacy-policy">
+                            <a href="">Polityka prywatności</a>
                         </div>
                     </div>
                 </div>

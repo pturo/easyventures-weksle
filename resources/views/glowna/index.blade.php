@@ -25,12 +25,13 @@
             <div class="sticky-content">Znajdź nas</div>
         </a>
     </div>
-    <div class="section-content">
+    <div class="glowna container">
         <div class="container">
             <div class="row">
                 <div class="o-nas padding-15">
                     <h1>Kim jesteśmy?</h1>
                     <hr class="dark-blue">
+                    <br>
                     <p>
                         Jesteśmy firmą, która zajmuje się obrotem papieru wartościowego jakim jest weksel.
                         Jest to działalność finansowa, która finansuje naszych klientów na zasadzie sprzedaży przez
@@ -126,7 +127,8 @@
                                     <div class="form-input">
                                         <label for="rate-text">Okres spłaty</label>
                                         <div class="custom-input">
-                                            <div><input id="rate-text" name="rate-text" type="text" value="0" disabled>
+                                            <div><input id="rate-text" name="rate-text" type="text" value="0"
+                                                    disabled>
                                                 mc
                                             </div>
                                         </div>
@@ -176,21 +178,31 @@
                                         <input id="email" type="email" name="email" placeholder="Wprowadź dane"
                                             class="@error('email') is-invalid @enderror">
                                     </div>
-                                    <div id="city-zip" class="form-control">
-                                        <label class="city" for="city">Miejscowość</label>
-                                        <input id="city" type="text" name="city" placeholder="Wprowadź dane"
-                                            class="@error('city') is-invalid @enderror">
-                                        <label class="zip-code" for="zip-code">Kod pocztowy</label>
-                                        <input id="zip-code" type="text" pattern="[0-9]{2}[-][0-9]{3}" name="zip-code"
-                                            placeholder="Wprowadź dane" class="@error('zip-code') is-invalid @enderror">
+                                    <div id="city-zip">
+                                        <div id="city-inner" class="form-control">
+                                            <label class="city" for="city">Miejscowość</label>&nbsp;&nbsp;
+                                            <input id="city" type="text" name="city"
+                                                placeholder="Wprowadź dane" class="@error('city') is-invalid @enderror">
+                                        </div>
+                                        <div id="zip-inner" class="form-control">
+                                            <label class="zip-code" for="zip-code">Kod pocztowy</label>&nbsp;&nbsp;
+                                            <input id="zip-code" type="text" pattern="[0-9]{2}[-][0-9]{3}"
+                                                name="zip-code" placeholder="Wprowadź dane"
+                                                class="@error('zip-code') is-invalid @enderror">
+                                        </div>
                                     </div>
-                                    <div id="street-home" class="form-control">
-                                        <label class="street" for="street">Ulica</label>
-                                        <input id="street" type="text" name="street" placeholder="Wprowadź dane"
-                                            class="@error('street') is-invalid @enderror">
-                                        <label class="home-number" for="home-number">Nr domu/mieszkania</label>
-                                        <input id="home-number" type="text" name="home-number"
-                                            placeholder="Wprowadź dane" class="@error('home-number') is-invalid @enderror">
+                                    <div id="street-home">
+                                        <div id="street-inner" class="form-control">
+                                            <label class="street" for="street">Ulica</label>&nbsp;&nbsp;
+                                            <input id="street" type="text" name="street"
+                                                placeholder="Wprowadź dane" class="@error('street') is-invalid @enderror">
+                                        </div>
+                                        <div id="home-inner" class="form-control">
+                                            <label class="home-number" for="home-number">Nr domu/mieszkania</label>&nbsp;&nbsp;
+                                            <input id="home-number" type="text" name="home-number"
+                                                placeholder="Wprowadź dane"
+                                                class="@error('home-number') is-invalid @enderror">
+                                        </div>
                                     </div>
                                     <div class="form-control">
                                         <label for="credits">Kwota weksla</label>
