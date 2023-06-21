@@ -6,7 +6,7 @@
             <span>
                 <i class="fa fa-map"></i>
             </span>
-            <div class="content">Znajdź nas</div>
+            <div class="sticky-content">Znajdź nas</div>
         </a>
     </div>
     <div class="sticky-right-menu">
@@ -14,7 +14,7 @@
             <span>
                 <i class="fa fa-map-marker"></i>
             </span>
-            <div class="content">Znajdź nas</div>
+            <div class="sticky-content">Znajdź nas</div>
         </a>
     </div>
     <div class="sticky-right-menu">
@@ -22,13 +22,13 @@
             <span>
                 <i class="fa fa-map-marker"></i>
             </span>
-            <div class="content">Znajdź nas</div>
+            <div class="sticky-content">Znajdź nas</div>
         </a>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-width-100">
-                <div class="o-nas">
+    <div class="section-content">
+        <div class="container">
+            <div class="row">
+                <div class="o-nas padding-15">
                     <h1>Kim jesteśmy?</h1>
                     <hr class="dark-blue">
                     <p>
@@ -43,10 +43,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-width-100">
-                <div class="zalety">
+            <div class="row">
+                <div class="zalety padding-15">
                     <h1>Dlaczego warto nas wybrać?</h1>
                     <hr class="dark-blue">
                     <table class="oferta">
@@ -96,22 +94,12 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-width-100">
-                <div class="kalkulator">
+            <div class="row">
+                <div class="kalkulator padding-15">
                     <h1>Kalkulator</h1>
                     <hr class="dark-blue">
                     <br>
-                    @if ($errors->any())
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <p class="error">{{ $error }}</p>
-                            @endforeach
-                        </ul>
-                    @endif
-                    <form class="kalkulator-form" action="{{ route('glowna.store') }}" method="POST">
-                        @csrf
+                    <div class="kalkulator-form">
                         <div class="form-wrapper">
                             <div class="left-form">
                                 <h3>Dobierz parametry weksla</h3>
@@ -127,7 +115,7 @@
                                 <br>
                                 <div class="values">
                                     <div class="form-input">
-                                        <label for="custom-input">Kwota weksla</label>
+                                        <label for="credit-text">Kwota weksla</label>
                                         <div class="custom-input">
                                             <div><input id="credit-text" name="credit-text" type="text" value="0"
                                                     disabled> pln
@@ -136,16 +124,18 @@
                                     </div>
                                     <br>
                                     <div class="form-input">
-                                        <label for="custom-input">Okres spłaty</label>
+                                        <label for="rate-text">Okres spłaty</label>
                                         <div class="custom-input">
-                                            <div><input id="rate-text" name="rate-text" type="text" value="0"
-                                                    disabled> mc
+                                            <div><input id="rate-text" name="rate-text" type="text" value="0" disabled>
+                                                mc
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
-                                <div class="form-button"><button type="submit">Złóż zapytanie</button></div>
+                                <div class="form-button">
+                                    <button id='buttonShowHide'>Złóż zapytanie</button>
+                                </div>
                             </div>
                             <div class="right-form">
                                 <h1>Potrzebujesz gotówki? Nie ma sprawy!</h1>
@@ -153,27 +143,130 @@
                                 <img src="{{ asset('img/money.png') }}" alt="Image by pch.vector on Freepik">
                             </div>
                         </div>
-                        <script>
-                            var creditVal = document.getElementById('credit-val');
-                            var rateVal = document.getElementById('rate-val');
-                            var creditText = document.getElementById('credit-text');
-                            var rateText = document.getElementById('rate-text');
+                    </div>
+                    <br>
+                    <div id="show-hide" style="display: none;">
+                        @if ($errors->any())
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li class="error">
+                                        <p>{{ $error }}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        <form action="{{ route('glowna.store') }}" method="POST">
+                            @csrf
+                            <div class="form-wrapper">
+                                <div class="wide-form">
+                                    <h3>Prosimy uzupełnić wszystkie pola</h3>
+                                    <br>
+                                    <div class="form-control">
+                                        <label for="name">Imię</label>
+                                        <input id="name" type="text" name="name" placeholder="Wprowadź dane"
+                                            class="@error('name') is-invalid @enderror">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="surname">Nazwisko</label>
+                                        <input id="surname" type="text" name="surname" placeholder="Wprowadź dane"
+                                            class="@error('surname') is-invalid @enderror">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="email">Adres e-mail</label>
+                                        <input id="email" type="email" name="email" placeholder="Wprowadź dane"
+                                            class="@error('email') is-invalid @enderror">
+                                    </div>
+                                    <div id="city-zip" class="form-control">
+                                        <label class="city" for="city">Miejscowość</label>
+                                        <input id="city" type="text" name="city" placeholder="Wprowadź dane"
+                                            class="@error('city') is-invalid @enderror">
+                                        <label class="zip-code" for="zip-code">Kod pocztowy</label>
+                                        <input id="zip-code" type="text" pattern="[0-9]{2}[-][0-9]{3}" name="zip-code"
+                                            placeholder="Wprowadź dane" class="@error('zip-code') is-invalid @enderror">
+                                    </div>
+                                    <div id="street-home" class="form-control">
+                                        <label class="street" for="street">Ulica</label>
+                                        <input id="street" type="text" name="street" placeholder="Wprowadź dane"
+                                            class="@error('street') is-invalid @enderror">
+                                        <label class="home-number" for="home-number">Nr domu/mieszkania</label>
+                                        <input id="home-number" type="text" name="home-number"
+                                            placeholder="Wprowadź dane" class="@error('home-number') is-invalid @enderror">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="credits">Kwota weksla</label>
+                                        <div id="credits-input" class="custom-input">
+                                            <div><input id="credits" name="rate-text" type="text" value="0"
+                                                    disabled> pln
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="rate">Okres spłaty</label>
+                                        <div id="rate-input" class="custom-input">
+                                            <div><input id="rate" name="rate-text" type="text" value="0"
+                                                    disabled> mc
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-button">
+                                        <button type="submit">Wyślij</button>&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        var creditVal = document.getElementById('credit-val');
+                        var rateVal = document.getElementById('rate-val');
+                        var creditText = document.getElementById('credit-text');
+                        var rateText = document.getElementById('rate-text');
+                        var credit = document.getElementById('credits');
+                        var rate = document.getElementById('rate');
 
-                            creditText.value = creditVal.value;
-                            rateText.value = rateVal.value;
+                        var buttonShowHide = document.getElementById('buttonShowHide');
+                        var showHideForm = document.getElementById('show-hide');
 
-                            creditVal.oninput = function() {
-                                creditText.value = this.value;
+                        var zipCode = document.getElementById('zip-code');
+
+                        creditText.value = creditVal.value;
+                        rateText.value = rateVal.value;
+                        credit.value = creditVal.value;
+                        rate.value = rateVal.value;
+
+                        creditVal.oninput = function() {
+                            creditText.value = this.value;
+                            credit.value = this.value;
+                        }
+
+                        rateVal.oninput = function() {
+                            rateText.value = this.value;
+                            rate.value = this.value;
+                        }
+
+                        buttonShowHide.onclick = function() {
+                            if (showHideForm.style.display == "none") {
+                                showHideForm.style.display = "block";
                             }
+                        }
 
-                            rateVal.oninput = function() {
-                                rateText.value = this.value;
+                        zipCode.onkeyup = function(e) {
+                            var code = this.value;
+                            var key = event.keyCode || event.charCode;
+
+                            if (this.value.length == 2) {
+                                if (key == 8 || key == 46) {} else {
+                                    this.value = (code + '-');
+                                }
                             }
-                        </script>
-                    </form>
+                            if (this.value.indexOf('--') !== -1) {
+                                this.value = code.replace('--', '-');
+                            }
+                        };
+                    </script>
                 </div>
             </div>
+            <br>
         </div>
-        <br>
     </div>
 @endsection

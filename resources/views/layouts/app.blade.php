@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Easyventures - Strona główna</title>
+    <title>Na Weksel - Strona główna</title>
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
@@ -26,7 +26,7 @@
                 <div class="row" id="header_1">
                     <div class="col-width-30">
                         <div class="logo">
-                            <a href="/">EASY VENTURES WEKSLE</a>
+                            <a href="/">Na Weksel</a>
                         </div>
                     </div>
                     <div class="col-width-70">
@@ -57,17 +57,19 @@
         <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-width-70">
-                        <div class="links">Linki</div>
-                    </div>
-                    <div class="col-width-30">
-                        <div class="contact">
-                            <h5>Skontaktuj się z nami</h5>
-                            <div class="footer-phone">
-                                <i class="fa fa-phone"></i>
-                                <a href="tel:123456789">123456789</a>
+                    <div class="footer-menu">
+                        <div class="linki padding-15">
+                            <div class="links">Linki</div>
+                        </div>
+                        <div class="kontakt padding-15">
+                            <div class="contact">
+                                <h5>Skontaktuj się z nami</h5>
+                                <div class="footer-phone">
+                                    <i class="fa fa-phone"></i>
+                                    <a href="tel:123456789">123456789</a>
+                                </div>
+                                <p>Głogowska 31/33, 60-702 Poznań, Polska</p>
                             </div>
-                            <p>Głogowska 31/33, 60-702 Poznań, Polska</p>
                         </div>
                     </div>
                 </div>
