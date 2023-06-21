@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="designed-by padding-15">
                         <div class="sdf">
-                            <span>Strona stworzona przez: <a href="">Agencja Digitalowa</a></span>
+                            <span>Strona stworzona przez: <a href="https://www.digitalowa.pl/">Agencja Digitalowa</a></span>
                         </div>
                         <div class="privacy-policy">
                             <a href="">Polityka prywatności</a>
