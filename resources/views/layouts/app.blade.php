@@ -25,25 +25,25 @@
             <div class="container">
                 <div class="row" id="header_1">
                     <div class="padding-15">
-                        <div class="logo">
-                            <a href="/">Na Weksel</a>
-                        </div>
-                    </div>
-                    <div class="padding-15">
-                        <div class="nav-wrapper">
-                            <nav>
-                                <ul class="nav-menu">
-                                    <li><a href="">WARUNKI FINANSOWANIA</a></li>
-                                    <li><a href="">KONTAKT</a></li>
-                                    <li><a href="">WSPÓŁPRACA</a></li>
-                                    <li>
-                                        <div class="nav-phone">
-                                            <i class="fa fa-phone"></i>
-                                            <a href="tel:123456789">123456789</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </nav>
+                        <div class="nav-items-wrapper">
+                            <div class="logo">
+                                <a href="/">Na Weksel</a>
+                            </div>
+                            <div class="nav-wrapper">
+                                <nav>
+                                    <ul class="nav-menu">
+                                        <li><a href="">WARUNKI FINANSOWANIA</a></li>
+                                        <li><a href="">KONTAKT</a></li>
+                                        <li><a href="">WSPÓŁPRACA</a></li>
+                                        <li>
+                                            <div class="nav-phone">
+                                                <i class="fa fa-phone"></i>
+                                                <a href="tel:123456789">123456789</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="designed-by padding-15">
                         <div class="sdf">
-                            <span>Strona stworzona przez: <a href="https://www.digitalowa.pl/">Agencja Digitalowa</a></span>
+                            <span>Realizacja: <a href="https://www.digitalowa.pl/">Agencja Digitalowa</a></span>
                         </div>
                         <div class="privacy-policy">
                             <a href="">Polityka prywatności</a>

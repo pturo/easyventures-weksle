@@ -1,104 +1,225 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="sticky-right-menu">
-        <a href="">
-            <span>
-                <i class="fa fa-map"></i>
-            </span>
-            <div class="sticky-content">Znajdź nas</div>
-        </a>
-    </div>
-    <div class="sticky-right-menu">
-        <a href="">
-            <span>
-                <i class="fa fa-map-marker"></i>
-            </span>
-            <div class="sticky-content">Znajdź nas</div>
-        </a>
-    </div>
-    <div class="sticky-right-menu">
-        <a href="">
-            <span>
-                <i class="fa fa-map-marker"></i>
-            </span>
-            <div class="sticky-content">Znajdź nas</div>
-        </a>
-    </div>
-    <div class="glowna container">
-        <div class="container">
+    <div class="glowna">
+        <div class="sticky-right-menu">
+            <a href="">
+                <span>
+                    <i class="fa fa-map"></i>
+                </span>
+                <div class="sticky-content">Znajdź nas</div>
+            </a>
+        </div>
+        <div class="sticky-right-menu">
+            <a href="">
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                <div class="sticky-content">Znajdź nas</div>
+            </a>
+        </div>
+        <div class="sticky-right-menu">
+            <a href="">
+                <span>
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                <div class="sticky-content">Znajdź nas</div>
+            </a>
+        </div>
+        <section id="glowna_1">
             <div class="row">
                 <div class="o-nas padding-15">
-                    <h1>Kim jesteśmy?</h1>
-                    <hr class="dark-blue">
-                    <br>
-                    <p>
-                        Jesteśmy firmą, która zajmuje się obrotem papieru wartościowego jakim jest weksel.
-                        Jest to działalność finansowa, która finansuje naszych klientów na zasadzie sprzedaży przez
-                        klienta swojego podpisanego weksla,
-                        klient otrzymuję do rąk gotówkę i podpisuje porozumienie wekslowe (umowa) w której ma
-                        informacje o pierwokupie
-                        weksla itp (mogę podesłać wzory) Jest to forma finansowania (nie używamy słów pożyczka,
-                        kredyt, chwilówka) ale zasada
-                        jest identyczna.
-                    </p>
+                    <div class="card-wrapper">
+                        <div class="intro-card">
+                            <h1>Kim jesteśmy?</h1>
+                            <br>
+                            <p>
+                                Jesteśmy firmą, która zajmuje się obrotem papieru wartościowego jakim jest weksel.
+                                Jest to działalność finansowa, która finansuje naszych klientów na zasadzie sprzedaży przez
+                                klienta swojego podpisanego weksla, klient otrzymuję do rąk gotówkę i podpisuje porozumienie
+                                wekslowe (umowa) w której ma informacje o pierwokupie weksla itp. Jest to forma finansowania
+                                (nie używamy słów pożyczka, kredyt, chwilówka) ale zasada jest identyczna.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+        <section id="glowna_2">
             <div class="row">
                 <div class="zalety padding-15">
                     <h1>Dlaczego warto nas wybrać?</h1>
-                    <hr class="dark-blue">
-                    <table class="oferta">
-                        <tbody>
-                            <tr>
-                                <td class="first">
-                                    <i class="fa fa-map"></i>
-                                    <h2>Brak ukrytych druczków</h2>
-                                    <p>
-                                        Stawiamy przede wszystkim na prostotę i tak też jest w przypadku
-                                        zawierania umów wekslowych.
-                                        Nasze zasady są jasne i przejrzyste dla klientów.
-                                    </p>
-                                </td>
-                                <td>
-                                    <i class="fa fa-map"></i>
-                                    <h2>Bogate doświadczenie</h2>
-                                    <p>
-                                        Doświadczenie to nasz główny atut. W naszej firmie pracuje szereg
-                                        wykwalifikowanych pracowników,
-                                        którzy zawsze służą swoją wiedzą i pomocą podczas zawierania umów
-                                        wekslowych.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fa fa-map"></i>
-                                    <h2>Współpraca</h2>
-                                    <p>
-                                        Prowadzimy współpracę z przedstawicielami naszej branży z całej Polski,
-                                        posiadającymi własne bazy klientów,
-                                        którym można udzielić finansowania i przy okazji polecić nasze usługi.
-                                    </p>
-                                </td>
-                                <td class="last">
-                                    <i class="fa fa-map"></i>
-                                    <h2>Niezawodne wsparcie</h2>
-                                    <p>
-                                        Czasami może się zdarzyć sytuacja, w których potrzebna będzie pomoc i od
-                                        tego właśnie jesteśmy. Chętnie
-                                        pomożemy rozwiązać trudności związane ze spłatą należności.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <br>
+                    <div class="card-grid">
+                        <div class="card-grid-item">
+                            <div class="icon-header">
+                                <i class="fa fa-search"></i>
+                                <h2>Brak ukrytych druczków</h2>
+                            </div>
+                            <p>
+                                Stawiamy przede wszystkim na prostotę i tak też jest w przypadku
+                                zawierania umów wekslowych.
+                                Nasze zasady są jasne i przejrzyste dla klientów.
+                            </p>
+                        </div>
+                        <div class="card-grid-item">
+                            <div class="icon-header">
+                                <i class="fa fa-line-chart"></i>
+                                <h2>Bogate doświadczenie</h2>
+                            </div>
+                            <p>
+                                Doświadczenie to nasz główny atut. W naszej firmie pracuje szereg
+                                wykwalifikowanych pracowników,
+                                którzy zawsze służą swoją wiedzą i pomocą podczas zawierania umów
+                                wekslowych.
+                            </p>
+                        </div>
+                        <div class="card-grid-item">
+                            <div class="icon-header">
+                                <i class="fa fa-thumbs-up"></i>
+                                <h2>Współpraca</h2>
+                            </div>
+                            <p>
+                                Prowadzimy współpracę z przedstawicielami naszej branży z całej Polski,
+                                posiadającymi własne bazy klientów,
+                                którym można udzielić finansowania i przy okazji polecić nasze usługi.
+                            </p>
+                        </div>
+                        <div class="card-grid-item">
+                            <div class="icon-header">
+                                <i class="fa fa-ticket"></i>
+                                <h2>Niezawodne wsparcie</h2>
+                            </div>
+                            <p>
+                                Czasami może się zdarzyć sytuacja, w których potrzebna będzie pomoc i od
+                                tego właśnie jesteśmy. Chętnie
+                                pomożemy rozwiązać trudności związane ze spłatą należności.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+        <section id="glowna_3">
+            <div class="row">
+                <div class="jak-splacic-weksel padding-15">
+                    <div class="jak-splacic-wrapper">
+                        <div class="splata-left">
+                            <h2>Jak złożyć wniosek o weksel?</h2>
+                            <div class="step">
+                                <div class="jak-splacic-items">
+                                    <div class="splata-col-2">
+                                        <div class="step-num">1</div>
+                                    </div>
+                                    <div class="splata-col-10">
+                                        <div class="jak-splacic-items">
+                                            <div class="splata-col-3">
+                                                <i class="fa fa-file"></i>
+                                            </div>
+                                            <div class="splata-col-9">
+                                                <p>Złóż wniosek o weksel</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="jak-splacic-items">
+                                    <div class="splata-col-2">
+                                        <div class="step-num">2</div>
+                                    </div>
+                                    <div class="splata-col-10">
+                                        <div class="jak-splacic-items">
+                                            <div class="splata-col-3">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                            <div class="splata-col-9">
+                                                <p>Poczekaj na zatwierdzenie</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="jak-splacic-items">
+                                    <div class="splata-col-2">
+                                        <div class="step-num">3</div>
+                                    </div>
+                                    <div class="splata-col-10">
+                                        <div class="jak-splacic-items">
+                                            <div class="splata-col-3">
+                                                <i class="fa fa-usd"></i>
+                                            </div>
+                                            <div class="splata-col-9">
+                                                <p>Otrzymaj pieniądze</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="splata-right">
+                            <h2>Jak spłacić należność?</h2>
+                            <div class="step">
+                                <div class="jak-splacic-items">
+                                    <div class="splata-col-2">
+                                        <div class="step-num">1</div>
+                                    </div>
+                                    <div class="splata-col-10">
+                                        <div class="jak-splacic-items">
+                                            <div class="splata-col-3">
+                                                <i class="fa fa-building"></i>
+                                            </div>
+                                            <div class="splata-col-9">
+                                                <p>W naszej siedzibie</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="jak-splacic-items">
+                                    <div class="splata-col-2">
+                                        <div class="step-num">2</div>
+                                    </div>
+                                    <div class="splata-col-10">
+                                        <div class="jak-splacic-items">
+                                            <div class="splata-col-3">
+                                                <i class="fa fa-exchange"></i>
+                                            </div>
+                                            <div class="splata-col-9">
+                                                <p>Przelewem</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="jak-splacic-items">
+                                    <div class="splata-col-2">
+                                        <div class="step-num">3</div>
+                                    </div>
+                                    <div class="splata-col-10">
+                                        <div class="jak-splacic-items">
+                                            <div class="splata-col-3">
+                                                <i class="fa fa-bank"></i>
+                                            </div>
+                                            <div class="splata-col-9">
+                                                <p>U Doradcy Kredytowego</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="glowna_4">
             <div class="row">
                 <div class="kalkulator padding-15">
                     <h1>Kalkulator</h1>
-                    <hr class="dark-blue">
                     <br>
                     <div class="kalkulator-form">
                         <div class="form-wrapper">
@@ -106,8 +227,8 @@
                                 <h3>Dobierz parametry weksla</h3>
                                 <div class="sliders">
                                     <label for="credit-val">Kwota weksla</label><br>
-                                    <input id="credit-val" name="credit-val" type="range" min="500" max="2000"
-                                        value="0">
+                                    <input id="credit-val" name="credit-val" type="range" min="500"
+                                        max="2000" value="0">
                                     <br>
                                     <label for="rate-val">Okres spłaty</label><br>
                                     <input id="rate-val" name="rate-val" type="range" min="1" max="36"
@@ -118,8 +239,8 @@
                                     <div class="form-input">
                                         <label for="credit-text">Kwota weksla</label>
                                         <div class="custom-input">
-                                            <div><input id="credit-text" name="credit-text" type="text" value="0"
-                                                    disabled> pln
+                                            <div><input id="credit-text" name="credit-text" type="text"
+                                                    value="0" disabled> pln
                                             </div>
                                         </div>
                                     </div>
@@ -198,7 +319,8 @@
                                                 placeholder="Wprowadź dane" class="@error('street') is-invalid @enderror">
                                         </div>
                                         <div id="home-inner" class="form-control">
-                                            <label class="home-number" for="home-number">Nr domu/mieszkania</label>&nbsp;&nbsp;
+                                            <label class="home-number" for="home-number">Nr
+                                                domu/mieszkania</label>&nbsp;&nbsp;
                                             <input id="home-number" type="text" name="home-number"
                                                 placeholder="Wprowadź dane"
                                                 class="@error('home-number') is-invalid @enderror">
@@ -278,7 +400,20 @@
                     </script>
                 </div>
             </div>
-            <br>
-        </div>
+        </section>
+        <section id="glowna_5">
+            <div class="znajdz-nas-mapa">
+                <div class="row">
+                    <div class="g-map">
+                        <h1>Znajdź nas tutaj</h1>
+                        <br>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.14931891664833!2d16.9054767039234!3d52.3996239048731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b2d3dd055cb%3A0x99a5d242f3a409e8!2sG%C5%82ogowska%2031-33%2C%2060-702%20Pozna%C5%84!5e0!3m2!1spl!2spl!4v1687514877498!5m2!1spl!2spl"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 @endsection
