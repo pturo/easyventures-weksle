@@ -3,14 +3,14 @@
 @section('content')
     <div class="glowna">
         <div class="sticky-right-menu">
-            <a href="">
+            <a href="#glowna_5">
                 <span>
                     <i class="fa fa-map"></i>
                 </span>
                 <div class="sticky-content">Znajdź nas</div>
             </a>
         </div>
-        <div class="sticky-right-menu">
+        {{-- <div class="sticky-right-menu">
             <a href="">
                 <span>
                     <i class="fa fa-map-marker"></i>
@@ -25,7 +25,7 @@
                 </span>
                 <div class="sticky-content">Znajdź nas</div>
             </a>
-        </div>
+        </div> --}}
         <section id="glowna_1">
             <div class="row">
                 <div class="o-nas padding-15">
@@ -236,7 +236,7 @@
                                 </div>
                                 <br>
                                 <div class="values">
-                                    <div class="form-input">
+                                    <div id="credits-input" class="form-input">
                                         <label for="credit-text">Kwota weksla</label>
                                         <div class="custom-input">
                                             <div><input id="credit-text" name="credit-text" type="text"
@@ -245,7 +245,7 @@
                                         </div>
                                     </div>
                                     <br>
-                                    <div class="form-input">
+                                    <div id="rate-input" class="form-input">
                                         <label for="rate-text">Okres spłaty</label>
                                         <div class="custom-input">
                                             <div><input id="rate-text" name="rate-text" type="text" value="0"
@@ -326,7 +326,7 @@
                                                 class="@error('home-number') is-invalid @enderror">
                                         </div>
                                     </div>
-                                    <div class="form-control">
+                                    <div id="credits-input-wrapper" class="form-control">
                                         <label for="credits">Kwota weksla</label>
                                         <div id="credits-input" class="custom-input">
                                             <div><input id="credits" name="rate-text" type="text" value="0"
@@ -334,7 +334,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-control">
+                                    <div id="rate-input-wrapper" class="form-control">
                                         <label for="rate">Okres spłaty</label>
                                         <div id="rate-input" class="custom-input">
                                             <div><input id="rate" name="rate-text" type="text" value="0"
@@ -411,6 +411,7 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.14931891664833!2d16.9054767039234!3d52.3996239048731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b2d3dd055cb%3A0x99a5d242f3a409e8!2sG%C5%82ogowska%2031-33%2C%2060-702%20Pozna%C5%84!5e0!3m2!1spl!2spl!4v1687514877498!5m2!1spl!2spl"
                             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div></div>
                     </div>
                 </div>
             </div>
