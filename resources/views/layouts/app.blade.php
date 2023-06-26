@@ -27,7 +27,9 @@
                     <div class="padding-15">
                         <div class="nav-items-wrapper">
                             <div class="logo">
-                                <a href="/">Na Weksel</a>
+                                <a href="/glowna">
+                                    <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="naweksel-logo" width="150" height="90">
+                                </a>
                             </div>
                             <div class="nav-wrapper">
                                 <nav>
@@ -59,7 +61,16 @@
                 <div class="row">
                     <div class="footer-menu">
                         <div class="linki padding-15">
-                            <div class="links">Linki</div>
+                            <div class="links">
+                                <h5>Linki</h5>
+                                <div class="page-links">
+                                    <a href="#">Warunki finansowania</a>
+                                    <a href="#">Współpraca</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logo-footer">
+                            <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="naweksel-logo" height="200">
                         </div>
                         <div class="kontakt padding-15">
                             <div class="contact">

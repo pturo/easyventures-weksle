@@ -10,23 +10,15 @@
                 <div class="sticky-content">Znajdź nas</div>
             </a>
         </div>
-        {{-- <div class="sticky-right-menu">
-            <a href="">
+        <div class="sticky-right-menu">
+            <a href="tel:123456789">
                 <span>
-                    <i class="fa fa-map-marker"></i>
+                    <i class="fa fa-phone"></i>
                 </span>
-                <div class="sticky-content">Znajdź nas</div>
+                <div class="sticky-content">Zadzwoń</div>
             </a>
         </div>
-        <div class="sticky-right-menu">
-            <a href="">
-                <span>
-                    <i class="fa fa-map-marker"></i>
-                </span>
-                <div class="sticky-content">Znajdź nas</div>
-            </a>
-        </div> --}}
-        <section id="glowna_1">
+        <section id="o-firmie">
             <div class="row">
                 <div class="o-nas padding-15">
                     <div class="card-wrapper">
@@ -34,18 +26,19 @@
                             <h1>Kim jesteśmy?</h1>
                             <br>
                             <p>
-                                Jesteśmy firmą, która zajmuje się obrotem papieru wartościowego jakim jest weksel.
-                                Jest to działalność finansowa, która finansuje naszych klientów na zasadzie sprzedaży przez
-                                klienta swojego podpisanego weksla, klient otrzymuję do rąk gotówkę i podpisuje porozumienie
-                                wekslowe (umowa) w której ma informacje o pierwokupie weksla itp. Jest to forma finansowania
-                                (nie używamy słów pożyczka, kredyt, chwilówka) ale zasada jest identyczna.
+                                Nasza firma specjalizuje się w handlu papierami wartościowymi, konkretnie wekslami.
+                                Świadczymy usługi finansowe, które polegają na finansowaniu naszych klientów poprzez możliwość
+                                sprzedaży przez nich podpisanego weksla w zamian za gotówkę. Klient otrzymuje natychmiastowe środki
+                                finansowe i podpisuje umowę wekslową, zawierającą informacje dotyczące pierwszego nabywcy weksla
+                                i inne istotne postanowienia. Choć nasza forma finansowania nie jest tradycyjnym pożyczkowaniem,
+                                kredytem ani chwilówką, zasada działania jest identyczna.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="glowna_2">
+        <section id="nasze-atuty">
             <div class="row">
                 <div class="zalety padding-15">
                     <h1>Dlaczego warto nas wybrać?</h1>
@@ -100,7 +93,7 @@
                 </div>
             </div>
         </section>
-        <section id="glowna_3">
+        <section id="splaty-weksli">
             <div class="row">
                 <div class="jak-splacic-weksel padding-15">
                     <div class="jak-splacic-wrapper">
@@ -216,7 +209,7 @@
                 </div>
             </div>
         </section>
-        <section id="glowna_4">
+        <section id="kalkulator-wekslowy">
             <div class="row">
                 <div class="kalkulator padding-15">
                     <h1>Kalkulator</h1>
@@ -401,7 +394,29 @@
                 </div>
             </div>
         </section>
-        <section id="glowna_5">
+        <section id="wspolpraca">
+            <div class="row">
+                <div class="kooperacja padding-15">
+                    <h1>Współpraca</h1>
+                    <br>
+                    <div class="wspolpraca-card">
+                        <div class="background"></div>
+                        <div class="content">
+                            <p>
+                                Cieszymy się, że możemy współpracować z naszymi agentami. Jesteśmy przekonani,
+                                że nasza działalność finansowa przyniesie znaczące korzyści Państwa klientom.
+                                Nasza firma oferuje szybkie i skuteczne rozwiązania finansowe oparte na sprzedaży weksli.
+                                Dzięki naszemu wsparciu, agenci będą mieli możliwość skorzystania z natychmiastowej gotówki,
+                                co przyczyni się do zwiększenia ich elastyczności finansowej. Jesteśmy otwarci na
+                                długoterminową współpracę i zapewniamy profesjonalne podejście w obsłudze klienta.
+                                Razem możemy osiągnąć sukces i przyczynić się do wzrostu biznesu agentów z całej Polski.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="znajdz-nas">
             <div class="znajdz-nas-mapa">
                 <div class="row">
                     <div class="g-map">
