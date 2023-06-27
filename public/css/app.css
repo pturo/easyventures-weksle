@@ -234,7 +234,7 @@ input:disabled {
     position: relative;
     background-color: #1b3e7a;
     color: #fff;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     padding-top: 30px;
     width: 100%;
     bottom: 0;
@@ -255,6 +255,8 @@ input:disabled {
 .footer-menu .linki .page-links a {
     text-decoration: none;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-menu .linki .page-links a:hover {
@@ -443,6 +445,10 @@ input:disabled {
 
 .step {
     margin: 0 0 20px;
+}
+
+.step .center {
+    text-align: center;
 }
 
 .jak-splacic-wrapper .splata-left {
@@ -837,7 +843,9 @@ label.home-number {
 
 .wspolpraca-card .content {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 50%;
     height: 100%;
     padding: 20px 30px;
@@ -848,6 +856,11 @@ label.home-number {
     font-size: 18px;
     font-weight: bold;
     color: white;
+}
+
+.wspolpraca-card .content .center {
+    padding-top: 10px;
+    text-align: center;
 }
 
 .g-map {
@@ -1019,6 +1032,8 @@ label.home-number {
     }
 
     .footer-menu .logo-footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
         display: flex;
         justify-content: center;
     }

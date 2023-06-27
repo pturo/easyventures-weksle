@@ -35,8 +35,8 @@
                                 <nav>
                                     <ul class="nav-menu">
                                         <li><a href="">WARUNKI FINANSOWANIA</a></li>
-                                        <li><a href="">KONTAKT</a></li>
                                         <li><a href="">WSPÓŁPRACA</a></li>
+                                        <li><a href="">KONTAKT</a></li>
                                         <li>
                                             <div class="nav-phone">
                                                 <i class="fa fa-phone"></i>
@@ -70,16 +70,19 @@
                             </div>
                         </div>
                         <div class="logo-footer">
-                            <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="naweksel-logo" height="200">
+                            <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="naweksel-logo" height="100">
                         </div>
                         <div class="kontakt padding-15">
                             <div class="contact">
                                 <h5>Skontaktuj się z nami</h5>
+                                <br>
+                                <strong><h2 style="color: white;">EASY VENTURES SP. Z O. O.</h2></strong>
+                                <p>ul. Głogowska 31/33, 60-702 Poznań, Polska</p>
+                                <p>NIP: 5242893955</p>
                                 <div class="footer-phone">
                                     <i class="fa fa-phone"></i>
                                     <a href="tel:123456789">123456789</a>
                                 </div>
-                                <p>Głogowska 31/33, 60-702 Poznań, Polska</p>
                             </div>
                         </div>
                     </div>

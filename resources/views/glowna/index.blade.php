@@ -3,19 +3,19 @@
 @section('content')
     <div class="glowna">
         <div class="sticky-right-menu">
-            <a href="#glowna_5">
-                <span>
-                    <i class="fa fa-map"></i>
-                </span>
-                <div class="sticky-content">Znajdź nas</div>
-            </a>
-        </div>
-        <div class="sticky-right-menu">
             <a href="tel:123456789">
                 <span>
                     <i class="fa fa-phone"></i>
                 </span>
                 <div class="sticky-content">Zadzwoń</div>
+            </a>
+        </div>
+        <div class="sticky-right-menu">
+            <a href="#glowna_5">
+                <span>
+                    <i class="fa fa-map"></i>
+                </span>
+                <div class="sticky-content">Znajdź nas</div>
             </a>
         </div>
         <section id="o-firmie">
@@ -35,6 +35,207 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section id="kalkulator-wekslowy">
+            <div class="row">
+                <div class="kalkulator padding-15">
+                    <h1>Kalkulator</h1>
+                    <br>
+                    <div class="kalkulator-form">
+                        <div class="form-wrapper">
+                            <div class="left-form">
+                                <h3>Dobierz parametry weksla</h3>
+                                <div class="sliders">
+                                    <label for="credit-val">Kwota weksla</label><br>
+                                    <input id="credit-val" name="credit-val" type="range" min="500"
+                                        max="2000" value="0">
+                                    <br>
+                                    <label for="rate-val">Okres spłaty</label><br>
+                                    <input id="rate-val" name="rate-val" type="range" min="1" max="36"
+                                        value="0">
+                                </div>
+                                <br>
+                                <div class="values">
+                                    <div id="credits-input" class="form-input">
+                                        <label for="credit-text">Kwota weksla</label>
+                                        <div class="custom-input">
+                                            <div><input id="credit-text" name="credit-text" type="text"
+                                                    value="0"> pln
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div id="rate-input" class="form-input">
+                                        <label for="rate-text">Okres spłaty</label>
+                                        <div class="custom-input">
+                                            <div><input id="rate-text" name="rate-text" type="text" value="0">
+                                                mc
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-button">
+                                    <button id='buttonShowHide'>Złóż zapytanie</button>
+                                </div>
+                            </div>
+                            <div class="right-form">
+                                <h1>Potrzebujesz gotówki? Nie ma sprawy!</h1>
+                                <p>Wystarczy złożyć zapytanie o finansowanie, wypełniając formularz i gotowe!</p>
+                                <img src="{{ asset('img/money.png') }}" alt="Image by pch.vector on Freepik">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="show-hide" style="display: none;">
+                        @if ($errors->any())
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li class="error">
+                                        <p>{{ $error }}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        <form action="{{ route('glowna.store') }}" method="POST">
+                            @csrf
+                            <div class="form-wrapper">
+                                <div class="wide-form">
+                                    <h3>Prosimy uzupełnić wszystkie pola</h3>
+                                    <br>
+                                    <div class="form-control">
+                                        <label for="name">Imię</label>
+                                        <input id="name" type="text" name="name" placeholder="Wprowadź dane"
+                                            class="@error('name') is-invalid @enderror">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="surname">Nazwisko</label>
+                                        <input id="surname" type="text" name="surname" placeholder="Wprowadź dane"
+                                            class="@error('surname') is-invalid @enderror">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="email">Adres e-mail</label>
+                                        <input id="email" type="email" name="email" placeholder="Wprowadź dane"
+                                            class="@error('email') is-invalid @enderror">
+                                    </div>
+                                    <div id="city-zip">
+                                        <div id="city-inner" class="form-control">
+                                            <label class="city" for="city">Miejscowość</label>&nbsp;&nbsp;
+                                            <input id="city" type="text" name="city"
+                                                placeholder="Wprowadź dane" class="@error('city') is-invalid @enderror">
+                                        </div>
+                                        <div id="zip-inner" class="form-control">
+                                            <label class="zip-code" for="zip-code">Kod pocztowy</label>&nbsp;&nbsp;
+                                            <input id="zip-code" type="text" pattern="[0-9]{2}[-][0-9]{3}"
+                                                name="zip-code" placeholder="Wprowadź dane"
+                                                class="@error('zip-code') is-invalid @enderror">
+                                        </div>
+                                    </div>
+                                    <div id="street-home">
+                                        <div id="street-inner" class="form-control">
+                                            <label class="street" for="street">Ulica</label>&nbsp;&nbsp;
+                                            <input id="street" type="text" name="street"
+                                                placeholder="Wprowadź dane" class="@error('street') is-invalid @enderror">
+                                        </div>
+                                        <div id="home-inner" class="form-control">
+                                            <label class="home-number" for="home-number">Nr
+                                                domu/mieszkania</label>&nbsp;&nbsp;
+                                            <input id="home-number" type="text" name="home-number"
+                                                placeholder="Wprowadź dane"
+                                                class="@error('home-number') is-invalid @enderror">
+                                        </div>
+                                    </div>
+                                    <div id="credits-input-wrapper" class="form-control">
+                                        <label for="credits">Kwota weksla</label>
+                                        <div id="credits-input" class="custom-input">
+                                            <div><input id="credits" name="rate-text" type="text" value="0"
+                                                    disabled> pln
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="rate-input-wrapper" class="form-control">
+                                        <label for="rate">Okres spłaty</label>
+                                        <div id="rate-input" class="custom-input">
+                                            <div><input id="rate" name="rate-text" type="text" value="0"
+                                                    disabled> mc
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-button">
+                                        <button type="submit">Wyślij</button>&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        var creditVal = document.getElementById('credit-val');
+                        var rateVal = document.getElementById('rate-val');
+                        var creditText = document.getElementById('credit-text');
+                        var rateText = document.getElementById('rate-text');
+                        var credit = document.getElementById('credits');
+                        var rate = document.getElementById('rate');
+
+                        var buttonShowHide = document.getElementById('buttonShowHide');
+                        var showHideForm = document.getElementById('show-hide');
+
+                        var zipCode = document.getElementById('zip-code');
+
+                        // get values from slider
+                        creditText.value = creditVal.value;
+                        rateText.value = rateVal.value;
+                        credit.value = creditVal.value;
+                        rate.value = rateVal.value;
+
+                        creditVal.oninput = function() {
+                            creditText.value = this.value;
+                            credit.value = this.value;
+                        }
+
+                        rateVal.oninput = function() {
+                            rateText.value = this.value;
+                            rate.value = this.value;
+                        }
+
+                        // get values to slider
+                        creditVal.value = creditText.value;
+                        rateVal.value = rateText.value;
+                        creditVal.value = credit.value;
+                        rateVal.value = rate.value;
+
+                        creditText.oninput = function() {
+                            creditVal.value = this.value;
+                            credit.value = this.value;
+                        }
+
+                        rateText.oninput = function() {
+                            rateVal.value = this.value;
+                            rate.value = this.value;
+                        }
+
+                        buttonShowHide.onclick = function() {
+                            if (showHideForm.style.display == "none") {
+                                showHideForm.style.display = "block";
+                            }
+                        }
+
+                        zipCode.onkeyup = function(e) {
+                            var code = this.value;
+                            var key = event.keyCode || event.charCode;
+
+                            if (this.value.length == 2) {
+                                if (key == 8 || key == 46) {} else {
+                                    this.value = (code + '-');
+                                }
+                            }
+                            if (this.value.indexOf('--') !== -1) {
+                                this.value = code.replace('--', '-');
+                            }
+                        };
+                    </script>
                 </div>
             </div>
         </section>
@@ -150,6 +351,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="step">
+                                <div class="center">
+                                    <a href="">
+                                        <button>Dowiedz się więcej</button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="splata-right">
                             <h2>Jak spłacić należność?</h2>
@@ -204,193 +412,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="kalkulator-wekslowy">
-            <div class="row">
-                <div class="kalkulator padding-15">
-                    <h1>Kalkulator</h1>
-                    <br>
-                    <div class="kalkulator-form">
-                        <div class="form-wrapper">
-                            <div class="left-form">
-                                <h3>Dobierz parametry weksla</h3>
-                                <div class="sliders">
-                                    <label for="credit-val">Kwota weksla</label><br>
-                                    <input id="credit-val" name="credit-val" type="range" min="500"
-                                        max="2000" value="0">
-                                    <br>
-                                    <label for="rate-val">Okres spłaty</label><br>
-                                    <input id="rate-val" name="rate-val" type="range" min="1" max="36"
-                                        value="0">
+                            <div class="step">
+                                <div class="center">
+                                    <a href="">
+                                        <button>Dowiedz się więcej</button>
+                                    </a>
                                 </div>
-                                <br>
-                                <div class="values">
-                                    <div id="credits-input" class="form-input">
-                                        <label for="credit-text">Kwota weksla</label>
-                                        <div class="custom-input">
-                                            <div><input id="credit-text" name="credit-text" type="text"
-                                                    value="0" disabled> pln
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div id="rate-input" class="form-input">
-                                        <label for="rate-text">Okres spłaty</label>
-                                        <div class="custom-input">
-                                            <div><input id="rate-text" name="rate-text" type="text" value="0"
-                                                    disabled>
-                                                mc
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="form-button">
-                                    <button id='buttonShowHide'>Złóż zapytanie</button>
-                                </div>
-                            </div>
-                            <div class="right-form">
-                                <h1>Potrzebujesz gotówki? Nie ma sprawy!</h1>
-                                <p>Wystarczy złożyć zapytanie o finansowanie, wypełniając formularz i gotowe!</p>
-                                <img src="{{ asset('img/money.png') }}" alt="Image by pch.vector on Freepik">
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <div id="show-hide" style="display: none;">
-                        @if ($errors->any())
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li class="error">
-                                        <p>{{ $error }}</p>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
-                        <form action="{{ route('glowna.store') }}" method="POST">
-                            @csrf
-                            <div class="form-wrapper">
-                                <div class="wide-form">
-                                    <h3>Prosimy uzupełnić wszystkie pola</h3>
-                                    <br>
-                                    <div class="form-control">
-                                        <label for="name">Imię</label>
-                                        <input id="name" type="text" name="name" placeholder="Wprowadź dane"
-                                            class="@error('name') is-invalid @enderror">
-                                    </div>
-                                    <div class="form-control">
-                                        <label for="surname">Nazwisko</label>
-                                        <input id="surname" type="text" name="surname" placeholder="Wprowadź dane"
-                                            class="@error('surname') is-invalid @enderror">
-                                    </div>
-                                    <div class="form-control">
-                                        <label for="email">Adres e-mail</label>
-                                        <input id="email" type="email" name="email" placeholder="Wprowadź dane"
-                                            class="@error('email') is-invalid @enderror">
-                                    </div>
-                                    <div id="city-zip">
-                                        <div id="city-inner" class="form-control">
-                                            <label class="city" for="city">Miejscowość</label>&nbsp;&nbsp;
-                                            <input id="city" type="text" name="city"
-                                                placeholder="Wprowadź dane" class="@error('city') is-invalid @enderror">
-                                        </div>
-                                        <div id="zip-inner" class="form-control">
-                                            <label class="zip-code" for="zip-code">Kod pocztowy</label>&nbsp;&nbsp;
-                                            <input id="zip-code" type="text" pattern="[0-9]{2}[-][0-9]{3}"
-                                                name="zip-code" placeholder="Wprowadź dane"
-                                                class="@error('zip-code') is-invalid @enderror">
-                                        </div>
-                                    </div>
-                                    <div id="street-home">
-                                        <div id="street-inner" class="form-control">
-                                            <label class="street" for="street">Ulica</label>&nbsp;&nbsp;
-                                            <input id="street" type="text" name="street"
-                                                placeholder="Wprowadź dane" class="@error('street') is-invalid @enderror">
-                                        </div>
-                                        <div id="home-inner" class="form-control">
-                                            <label class="home-number" for="home-number">Nr
-                                                domu/mieszkania</label>&nbsp;&nbsp;
-                                            <input id="home-number" type="text" name="home-number"
-                                                placeholder="Wprowadź dane"
-                                                class="@error('home-number') is-invalid @enderror">
-                                        </div>
-                                    </div>
-                                    <div id="credits-input-wrapper" class="form-control">
-                                        <label for="credits">Kwota weksla</label>
-                                        <div id="credits-input" class="custom-input">
-                                            <div><input id="credits" name="rate-text" type="text" value="0"
-                                                    disabled> pln
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="rate-input-wrapper" class="form-control">
-                                        <label for="rate">Okres spłaty</label>
-                                        <div id="rate-input" class="custom-input">
-                                            <div><input id="rate" name="rate-text" type="text" value="0"
-                                                    disabled> mc
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-button">
-                                        <button type="submit">Wyślij</button>&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <script>
-                        var creditVal = document.getElementById('credit-val');
-                        var rateVal = document.getElementById('rate-val');
-                        var creditText = document.getElementById('credit-text');
-                        var rateText = document.getElementById('rate-text');
-                        var credit = document.getElementById('credits');
-                        var rate = document.getElementById('rate');
-
-                        var buttonShowHide = document.getElementById('buttonShowHide');
-                        var showHideForm = document.getElementById('show-hide');
-
-                        var zipCode = document.getElementById('zip-code');
-
-                        creditText.value = creditVal.value;
-                        rateText.value = rateVal.value;
-                        credit.value = creditVal.value;
-                        rate.value = rateVal.value;
-
-                        creditVal.oninput = function() {
-                            creditText.value = this.value;
-                            credit.value = this.value;
-                        }
-
-                        rateVal.oninput = function() {
-                            rateText.value = this.value;
-                            rate.value = this.value;
-                        }
-
-                        buttonShowHide.onclick = function() {
-                            if (showHideForm.style.display == "none") {
-                                showHideForm.style.display = "block";
-                            }
-                        }
-
-                        zipCode.onkeyup = function(e) {
-                            var code = this.value;
-                            var key = event.keyCode || event.charCode;
-
-                            if (this.value.length == 2) {
-                                if (key == 8 || key == 46) {} else {
-                                    this.value = (code + '-');
-                                }
-                            }
-                            if (this.value.indexOf('--') !== -1) {
-                                this.value = code.replace('--', '-');
-                            }
-                        };
-                    </script>
                 </div>
             </div>
         </section>
@@ -411,6 +441,11 @@
                                 długoterminową współpracę i zapewniamy profesjonalne podejście w obsłudze klienta.
                                 Razem możemy osiągnąć sukces i przyczynić się do wzrostu biznesu agentów z całej Polski.
                             </p>
+                            <div class="center">
+                                <a href="">
+                                    <button>Dowiedz się więcej</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
