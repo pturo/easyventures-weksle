@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('glowna', 'IndexController');
-
 Route::resource('admin', 'AdminController');
 

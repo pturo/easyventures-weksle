@@ -18,7 +18,7 @@
                     <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="easyventures-logo" height="175px">
                 </div>
                 <h1 style="color: #bf9e87;">Zaloguj się do panelu administratora</h1>
-                <form action="">
+                <form method="post" action="{{ route('admin.store') }}">
                     @csrf
                     <div class="form-control">
                         <label for="login">LOGIN</label>

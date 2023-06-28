@@ -12,8 +12,17 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, label {
+h1, h2, h3, h4, h5, h6, p, label, a {
     color: white;
+}
+
+a:hover {
+    color: #bf9e87;
+}
+
+h5 {
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 button {
@@ -27,7 +36,13 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #1b3e7a;
+    border: 1px solid #bf9e87;
+}
+
 /*DIV CLASSES*/
+/* login page*/
 .login-wrapper {
     display: flex;
     flex-direction: row;
@@ -76,3 +91,166 @@ button {
     border-radius: 10px;
     padding: 10px 10px;
 }
+
+/* dashboard */
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.container .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 50;
+    background-color: #1b3e7a;
+    display: flex;
+    color: white;
+}
+
+.container .header .header-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.container .main-content {
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container .main-content .side-nav {
+    flex: 0 0 260px;
+    height: 100%;
+    background-color: #1b3e7a;
+    color: white;
+    transition: flex 0.3s;
+}
+
+.container .main-content .side-nav .side-nav-wrapper {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-nav-heading {
+    width: 100%;
+    height: 40px;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-list {
+    height: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item a {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item a:hover {
+    color: #bf9e87;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item a .list-item-icon {
+    width: 50%;
+    text-align: center;
+}
+
+.container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item a .list-item-text {
+    width: 100%;
+    text-align: center;
+}
+
+.container .main-content .fillable-content {
+    flex: 1;
+    max-width: calc(100% - 260px);
+    height: 100%;
+    transition: max-width 0.3s;
+}
+
+.container .main-content .fillable-content .content-container {
+    padding: 20px 40px;
+}
+
+.container .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1b3e7a;
+    color: white;
+}
+
+/* OTHER SETTINGS */
+@media (max-width: 590px) {
+    .container .main-content .side-nav {
+        flex: 0 0 10% !important;
+        transition: flex 0.3s;
+    }
+
+    .container .main-content .side-nav .side-nav-wrapper {
+        padding: 10px 20px;
+    }
+
+    .container .main-content .side-nav .side-nav-wrapper .side-nav-heading {
+        display: none;
+    }
+
+    .container .main-content .side-nav .side-nav-wrapper .side-list {
+        height: 100%;
+        max-width: 100px;
+    }
+
+    .container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item {
+        width: max-content;
+    }
+
+    .container .main-content .side-nav .side-nav-wrapper .side-list .side-list-item a .list-item-text {
+        display: none;
+    }
+
+    .container .main-content .fillable-content {
+        max-width: calc(100% - 10%) !important;
+        transition: max-width 0.3s; /* Dodajemy transition dla max-width z efektem trwającym 0.3 sekundy */
+    }
+}
+
+@media (max-width: 540px) {
+    .container .main-content .side-nav {
+        flex: 0 0 54px !important;
+        transition: flex 0.3s;
+    }
+
+    .container .main-content .fillable-content {
+        max-width: calc(100% - 54px);
+        transition: max-width 0.3s;
+    }
+}
+
