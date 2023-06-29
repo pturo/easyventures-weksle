@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +19,26 @@
 
     <!-- Scripts -->
 </head>
-<body>
+
+<body class="dark-blue-theme">
     <div id="app">
         <div class="container">
             <div class="header">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <img src="{{ asset('img/easyventure-logo-admin.png') }}" alt="easyventures-logo-admin" width="150" height="60">
+                        <img src="{{ asset('img/easyventure-logo-admin.png') }}" alt="easyventures-logo-admin"
+                            width="150" height="60">
                     </div>
-                    <div class="header-tools">TOOLS</div>
+                    <div class="header-tools">
+                        <div class="user-profile">USER_PROFILE</div>
+                        <div class="theme-switcher">
+                            <span id="current-theme">Aktualny motyw: Dark Blue</span>&nbsp;
+                            <label class="switch">
+                                <input type="checkbox" id="themeSwitcher">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="main-content">
@@ -37,7 +49,7 @@
                             <hr color="white">
                         </div>
                         <div class="side-list">
-                            <div class="side-list-item">
+                            <div class="side-list-item" class="active">
                                 <a href="">
                                     <div class="list-item-icon">
                                         <i class="fa fa-marker"></i>
@@ -75,4 +87,23 @@
         </div>
     </div>
 </body>
+<script>
+    var getCurrentTheme = document.body;
+
+    var getSwitcher = document.getElementById('themeSwitcher');
+    var getName = document.getElementById('current-theme');
+
+    getSwitcher.addEventListener('change', function() {
+        if (getSwitcher.checked) {
+            getName.textContent = "Aktualny motyw: Light Coffee";
+            getCurrentTheme.classList.remove('dark-blue-theme');
+            getCurrentTheme.classList.add('light-coffee-theme');
+        } else {
+            getName.textContent = "Aktualny motyw: Dark Blue";
+            getCurrentTheme.classList.remove('light-coffee-theme');
+            getCurrentTheme.classList.add('dark-blue-theme');
+        }
+    });
+</script>
+
 </html>
