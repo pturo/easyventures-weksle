@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('glowna', 'IndexController');
-Route::resource('admin', 'AdminController');
+//Route::resource('admin', 'AdminController');
 
 // Index page
 // Route::group(['prefix'=>'glowna'], function() {
@@ -22,8 +22,11 @@ Route::resource('admin', 'AdminController');
 //     //Route::post('/zloz-zapytanie', 'IndexController@store');
 // });
 
-// // Admin panel
-// Route::group(['prefix'=>'admin'], function() {
-//     Route::post('login', '');
-// });
+// Admin panel
+Route::group(['prefix'=>'admin'], function() {
+    Route::get('/login', 'LoginController@index')->name('login.index');
+    Route::post('/login', 'LoginController@store')->name('login.store');
+    Route::get('/dashboard', 'AdminController@index')->name('dashboard.index');
+    Route::get('/o-nas', 'ONasController@index')->name('o-nas.index');
+});
 

@@ -16,7 +16,7 @@
         </div>
         <div class="shortcut-grid">
             <div class="grid-item">
-                <a href="">
+                <a href="#">
                     <div class="grid-icon">
                         <i class="fa fa-book"></i>
                     </div>
@@ -24,7 +24,7 @@
                 </a>
             </div>
             <div class="grid-item">
-                <a href="">
+                <a href="#">
                     <div class="grid-icon">
                         <i class="fa fa-star"></i>
                     </div>
@@ -32,7 +32,7 @@
                 </a>
             </div>
             <div class="grid-item">
-                <a href="">
+                <a href="#">
                     <div class="grid-icon">
                         <i class="fa fa-map"></i>
                     </div>
@@ -40,7 +40,7 @@
                 </a>
             </div>
             <div class="grid-item">
-                <a href="">
+                <a href="#">
                     <div class="grid-icon">
                         <i class="fa fa-search"></i>
                     </div>

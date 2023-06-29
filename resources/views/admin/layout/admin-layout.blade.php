@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Paweł 'WilczeqVlk' Turoń">
     <title>Na Weksel - Panel administracyjny</title>
     <!-- CSS Styles -->
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
@@ -49,24 +50,24 @@
                             <hr color="white">
                         </div>
                         <div class="side-list">
-                            <div class="side-list-item" class="active">
-                                <a href="">
+                            <div class="side-list-item{{ (request()->is('dashboard.index')) ? ' active' : '' }}" data-index="1">
+                                <a href="{{ route('dashboard.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-marker"></i>
                                     </div>
-                                    <div class="list-item-text">NAWIGACJA 1</div>
+                                    <div class="list-item-text">Panel główny</div>
                                 </a>
                             </div>
-                            <div class="side-list-item">
-                                <a href="">
+                            <div class="side-list-item{{ (request()->is('o-nas.index')) ? ' active' : '' }}" data-index="2">
+                                <a href="{{ route('o-nas.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-book"></i>
                                     </div>
-                                    <div class="list-item-text">NAWIGACJA 2</div>
+                                    <div class="list-item-text">O nas</div>
                                 </a>
                             </div>
-                            <div class="side-list-item">
-                                <a href="">
+                            <div class="side-list-item" data-index="3">
+                                <a href="#">
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
                                     </div>
@@ -88,6 +89,7 @@
     </div>
 </body>
 <script>
+    // Theme switcher
     var getCurrentTheme = document.body;
 
     var getSwitcher = document.getElementById('themeSwitcher');
@@ -103,6 +105,26 @@
             getCurrentTheme.classList.remove('light-coffee-theme');
             getCurrentTheme.classList.add('dark-blue-theme');
         }
+    });
+
+    // Switching side nav item link active
+    // Get all the side-list-item elements
+    const navItems = document.querySelectorAll('.side-list-item');
+
+    // Set the first item as active by default
+    navItems[0].classList.add('active');
+
+    // Add click event listener to each nav item
+    navItems.forEach((item) => {
+        item.addEventListener('click', function() {
+            // Remove active class from all items
+            navItems.forEach((navItem) => {
+                navItem.classList.remove('active');
+            });
+
+            // Add active class to the clicked item
+            this.classList.add('active');
+        });
     });
 </script>
 
