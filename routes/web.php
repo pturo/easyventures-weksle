@@ -28,5 +28,7 @@ Route::group(['prefix'=>'admin'], function() {
     Route::post('/login', 'LoginController@store')->name('login.store');
     Route::get('/dashboard', 'AdminController@index')->name('dashboard.index');
     Route::get('/o-nas', 'ONasController@index')->name('o-nas.index');
+    Route::get('/o-nas/dodaj', 'ONasController@create')->name('o-nas.create');
+    Route::post('/o-nas/dodaj', 'ONasController@store')->name('o-nas.store');
 });
 

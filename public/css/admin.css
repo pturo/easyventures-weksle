@@ -447,6 +447,87 @@ button:hover {
     text-align: center;
 }
 
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*o nas:create*/
+.container .main-content .fillable-content .content-container
+.create-section-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container .main-content .fillable-content .content-container
+.create-section-title h2 {
+    color: var(--primary-color);
+}
+
+.container .main-content .fillable-content .content-container
+.o-nas-title h2 {
+    color: var(--primary-color);
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+    padding: 20px 30px;
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper form .formControl {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper form .formControl label {
+    color: var(--primary-color);
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper form .formControl input {
+    height: 40px;
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper form .formControl input, textarea {
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+}
+
+.container .main-content .fillable-content .content-container
+.form-wrapper form .invalid-feedback {
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+    background-color: rgb(109, 1, 1);
+    color: red;
+}
+
 /* footer */
 
 .container .footer {

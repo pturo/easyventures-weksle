@@ -19,7 +19,7 @@ class ONasController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.o-nas.create');
     }
 
     /**
@@ -27,7 +27,8 @@ class ONasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validateForm($request);
+        return redirect()->back()->with('message', 'Sekcja dodana pomyślnie!');
     }
 
     /**
@@ -60,5 +61,18 @@ class ONasController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    // ValidateForm function
+    function validateForm($request) {
+        $this->validate($request, [
+            'name'=>'required|min:3',
+            'content'=>'required|min:3'
+        ], [
+            'name.required'=>'Nazwa sekcji jest wymagana.',
+            'name.min'=>'Nazwa sekcji musi zawierać więcej niż 3 znaki.',
+            'content.required'=>'Treść jest wymagana.',
+            'content.min'=>'Treść musi zawierać więcej niż 3 znaki.'
+        ]);
     }
 }
