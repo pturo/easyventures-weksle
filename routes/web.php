@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('glowna', 'IndexController');
-//Route::resource('admin', 'AdminController');
-
 // Index page
-// Route::group(['prefix'=>'glowna'], function() {
-//     Route::get('/', 'IndexController@index');
-//     //Route::post('/zloz-zapytanie', 'IndexController@store');
-// });
+Route::group(['prefix'=>'/'], function() {
+    Route::get('', 'IndexController@index')->name('index.index');
+    Route::get('/zloz-zapytanie', 'IndexController@create')->name('zloz-zapytanie.create');
+    Route::post('/zloz-zapytanie', 'IndexController@store')->name('zloz-zapytanie.store');
+});
 
 // Admin panel
 Route::group(['prefix'=>'admin'], function() {

@@ -99,7 +99,7 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <form action="{{ route('glowna.store') }}" method="POST">
+                        <form action="{{ route('zloz-zapytanie.store') }}" method="POST">
                             @csrf
                             <div class="form-wrapper">
                                 <div class="wide-form">

@@ -11,7 +11,7 @@ class ONasController extends Controller
      */
     public function index()
     {
-        return view('admin.o-nas.index',);
+        return view('admin.o-nas.index');
     }
 
     /**
