@@ -5,7 +5,7 @@
         <h2>Stwórz sekcję</h2>
     </div>
     @if (Session::has('message'))
-        <div style="success-feedback" role="alert">
+        <div class="success-feedback" role="alert">
             {{ Session::get('message') }}
         </div>
     @endif

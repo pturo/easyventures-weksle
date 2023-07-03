@@ -27,8 +27,10 @@
             <div class="header">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <img src="{{ asset('img/easyventure-logo-admin.png') }}" alt="easyventures-logo-admin"
+                        <a href="{{ route('dashboard.index') }}">
+                            <img src="{{ asset('img/easyventure-logo-admin.png') }}" alt="easyventures-logo-admin"
                             width="150" height="60">
+                        </a>
                     </div>
                     <div class="header-tools">
                         <div class="user-profile">
