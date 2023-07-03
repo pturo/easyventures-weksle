@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="dashboard-title">
-        <h2>Witaj, (username) w panelu administracyjnym!</h2>
+        @if (Auth::check())
+            <h2>Witaj, {{ Auth::user()->name }} w panelu administracyjnym!</h2>
+        @endif
     </div>
     <div class="dashboard-subtitle">
         <h4>

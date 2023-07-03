@@ -24,9 +24,14 @@ Route::group(['prefix'=>'/'], function() {
 Route::group(['prefix'=>'admin'], function() {
     Route::get('/login', 'LoginController@index')->name('login.index');
     Route::post('/login', 'LoginController@store')->name('login.store');
-    Route::get('/dashboard', 'AdminController@index')->name('dashboard.index');
-    Route::get('/o-nas', 'ONasController@index')->name('o-nas.index');
-    Route::get('/o-nas/dodaj', 'ONasController@create')->name('o-nas.create');
-    Route::post('/o-nas/dodaj', 'ONasController@store')->name('o-nas.store');
+    Route::get('/dashboard', 'AdminController@index')->middleware('auth', 'verified')->name('dashboard.index');
+    Route::post('/logout', 'LoginController@logout')->name('login.logout');
+    Route::get('/o-nas', 'ONasController@index')->middleware('auth', 'verified')->name('o-nas.index');
+    Route::get('/o-nas/dodaj', 'ONasController@create')->middleware('auth', 'verified')->name('o-nas.create');
+    Route::post('/o-nas/dodaj', 'ONasController@store')->middleware('auth', 'verified')->name('o-nas.store');
 });
 
+
+Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

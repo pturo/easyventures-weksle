@@ -17,11 +17,30 @@
             </a>
         </div>
         <div class="list-of-sections">
-            {{-- @forelse ( as )
-
+            <h4>Lista dodanych treści do sekcji O Nas</h4>
+            @forelse ($entries as $key=>$entry)
+                <div class="entries">
+                    <div class="entry-card">
+                        <div class="entry_id">Id: {{ $key + 1 }}</div>
+                        <div class="entry_name">Nazwa: {{ $entry->name }}</div>
+                        <div class="entry_content">Treść: {{ $entry->content }}</div>
+                        <div class="options">
+                            <div class="edit">
+                                <a href="">
+                                    <button>Edytuj</button>
+                                </a>
+                            </div>
+                            <div class="delete">
+                                <a href="">
+                                    <button>Usuń</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @empty
-
-            @endforelse --}}
+                <div class="empty">Nie ma żadnych wpisów.</div>
+            @endforelse
         </div>
     </div>
 @endsection

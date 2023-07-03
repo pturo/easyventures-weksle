@@ -13,6 +13,9 @@
     <div class="login-wrapper">
         <div class="background-theme"></div>
         <div class="login-form">
+            @if (Session::has('message'))
+                <div class="invalid-feedback" role="alert">{{ Session::get('message') }}</div>
+            @endif
             <div class="form-content">
                 <div class="logo">
                     <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="easyventures-logo" height="175px">
@@ -21,13 +24,19 @@
                 <form method="post" action="{{ route('login.store') }}">
                     @csrf
                     <div class="form-control">
-                        <label for="login">LOGIN</label>
-                        <input type="text" name="login" placeholder="Login">
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="email" placeholder="E-mail">
                     </div>
+                    @error('email')
+                        <div class="invalid-feedback" role="alert">{{ $message }}</div>
+                    @enderror
                     <div class="form-control">
                         <label for="password">HASŁO</label>
                         <input type="password" name="password" placeholder="Hasło">
                     </div>
+                    @error('password')
+                        <div class="invalid-feedback" role="alert">{{ $message }}</div>
+                    @enderror
                     <div class="form-control">
                         <button>Zaloguj się</button>
                     </div>

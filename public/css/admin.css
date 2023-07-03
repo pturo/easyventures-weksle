@@ -51,6 +51,29 @@ button:hover {
 }
 
 /*DIV CLASSES*/
+/* global styles */
+.invalid-feedback {
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+    background-color: rgb(109, 1, 1);
+    color: red;
+}
+
+.success-feedback {
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid limegreen;
+    background-color: green;
+    color: limegreen;
+}
+
+.empty {
+    color: red;
+}
+
 /* login page*/
 .login-wrapper {
     display: flex;
@@ -156,6 +179,14 @@ button:hover {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+.container .header .header-wrapper .header-tools
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }
 
 .container .header .header-wrapper .header-tools
@@ -455,6 +486,55 @@ button:hover {
     flex-direction: column;
 }
 
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper .add-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper .list-of-sections {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper .list-of-sections h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper .list-of-sections .entries {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper .list-of-sections .entries .entry-card {
+    width: auto;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .main-content .fillable-content .content-container
+.o-nas-wrapper .list-of-sections .entries .entry-card .options {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 /*o nas:create*/
 .container .main-content .fillable-content .content-container
 .create-section-title {
@@ -516,16 +596,6 @@ button:hover {
     padding: 10px 15px;
     border-radius: 10px;
     border: 1px solid var(--primary-color);
-}
-
-.container .main-content .fillable-content .content-container
-.form-wrapper form .invalid-feedback {
-    margin: 10px 0 10px 0;
-    padding: 10px 10px;
-    border-radius: 10px;
-    border: 1px solid red;
-    background-color: rgb(109, 1, 1);
-    color: red;
 }
 
 /* footer */

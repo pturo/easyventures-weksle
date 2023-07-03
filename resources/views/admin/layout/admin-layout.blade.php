@@ -31,7 +31,15 @@
                             width="150" height="60">
                     </div>
                     <div class="header-tools">
-                        <div class="user-profile">USER_PROFILE</div>
+                        <div class="user-profile">
+                            @if (Auth::check())
+                                <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                                <form action="{{ route('login.logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit">Wyloguj się</button>
+                                </form>
+                            @endif
+                        </div>
                         <div class="theme-switcher">
                             <span id="current-theme">Aktualny motyw: Dark Blue</span>&nbsp;
                             <label class="switch">
@@ -50,7 +58,8 @@
                             <hr color="white">
                         </div>
                         <div class="side-list">
-                            <div class="side-list-item{{ (request()->is('dashboard.index')) ? ' active' : '' }}" data-index="1">
+                            <div class="side-list-item{{ request()->is('dashboard.index') ? ' active' : '' }}"
+                                data-index="1">
                                 <a href="{{ route('dashboard.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-marker"></i>
@@ -58,12 +67,13 @@
                                     <div class="list-item-text">Panel główny</div>
                                 </a>
                             </div>
-                            <div class="side-list-item{{ (request()->is('o-nas.index')) ? ' active' : '' }}" data-index="2">
+                            <div class="side-list-item{{ request()->is('o-nas.index') ? ' active' : '' }}"
+                                data-index="2">
                                 <a href="{{ route('o-nas.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-book"></i>
                                     </div>
-                                    <div class="list-item-text">O nas</div>
+                                    <div class="list-item-text">Sekcja O nas</div>
                                 </a>
                             </div>
                             <div class="side-list-item" data-index="3">

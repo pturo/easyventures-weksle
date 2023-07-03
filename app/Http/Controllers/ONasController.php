@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ONas;
 
 class ONasController extends Controller
 {
@@ -11,7 +12,8 @@ class ONasController extends Controller
      */
     public function index()
     {
-        return view('admin.o-nas.index');
+        $entries = ONas::latest()->get();
+        return view('admin.o-nas.index', compact('entries'));
     }
 
     /**
@@ -28,6 +30,12 @@ class ONasController extends Controller
     public function store(Request $request)
     {
         $this->validateForm($request);
+
+        ONas::create([
+            'name'=>$request->get('name'),
+            'content'=>$request->get('content')
+        ]);
+
         return redirect()->back()->with('message', 'Sekcja dodana pomyślnie!');
     }
 

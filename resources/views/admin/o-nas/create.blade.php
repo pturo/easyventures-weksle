@@ -5,7 +5,7 @@
         <h2>Stwórz sekcję</h2>
     </div>
     @if (Session::has('message'))
-        <div style="backgorund-color: green; color: white;" role="alert">
+        <div style="success-feedback" role="alert">
             {{ Session::get('message') }}
         </div>
     @endif
@@ -18,9 +18,7 @@
                     value="{{ old('name') }}">
             </div>
             @error('name')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
+                <div class="invalid-feedback" role="alert">{{ $message }}</div>
             @enderror
             <div class="formControl">
                 <label for="content">Dodaj tekst</label>
@@ -28,9 +26,7 @@
                 placeholder="Wprowadź tekst">{{ old('content') }}</textarea>
             </div>
             @error('content')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
+                <div class="invalid-feedback" role="alert">{{ $message }}</div>
             @enderror
             <div class="formControl">
                 <button type="submit">Zapisz</button>
