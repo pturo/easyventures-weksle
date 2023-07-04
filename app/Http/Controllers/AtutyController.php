@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ONas;
+use App\Models\Atuty;
 
-class ONasController extends Controller
+class AtutyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $entries = ONas::all();
-        return view('admin.o-nas.index', compact('entries'));
+        $entries = Atuty::all();
+        return view('admin.atuty.index', compact('entries'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ONasController extends Controller
      */
     public function create()
     {
-        return view('admin.o-nas.create');
+        return view('admin.atuty.create');
     }
 
     /**
@@ -31,9 +31,10 @@ class ONasController extends Controller
     {
         $this->validateForm($request);
 
-        ONas::create([
+        Atuty::create([
+            'icon'=>$request->get('icon'),
             'name'=>$request->get('name'),
-            'content'=>$request->get('content')
+            'description'=>$request->get('description')
         ]);
 
         return redirect()->back()->with('message', 'Wpis został dodany.');
@@ -52,8 +53,8 @@ class ONasController extends Controller
      */
     public function edit(string $id)
     {
-        $entry = ONas::find($id);
-        return view('admin.o-nas.edit', compact('entry'));
+        $entry = Atuty::find($id);
+        return view('admin.atuty.edit', compact('$entry'));
     }
 
     /**
@@ -63,9 +64,10 @@ class ONasController extends Controller
     {
         $this->validateForm($request);
 
-        $entry = ONas::find($id);
-        $entry->name = $request->get('name');
-        $entry->content = $request->get('content');
+        $entry = Atuty::find($id);
+        $entry->icon = $request->get('icon');
+        $entry->name = $reuest->get('name');
+        $entry->description = $request->get('description');
         $entry->save();
 
         return redirect()->back()->with('message', 'Wpis został zaktualizowany.');
@@ -76,22 +78,25 @@ class ONasController extends Controller
      */
     public function destroy(string $id)
     {
-        $entry = ONas::find($id);
+        $entry = Atuty::find($id);
         $entry->delete();
 
-        return redirect()->route('o-nas.index')->with('message', 'Wpis został usunięty.');
+        return redirect()->route()->with('message', 'Wpis został usunięty.');
     }
 
     // ValidateForm function
     function validateForm($request) {
         $this->validate($request, [
+            'icon'=>'required|min:3',
             'name'=>'required|min:3',
-            'content'=>'required|min:3'
+            'description'=>'required|min:3'
         ], [
-            'name.required'=>'Nazwa sekcji jest wymagana.',
-            'name.min'=>'Nazwa sekcji musi zawierać więcej niż 3 znaki.',
-            'content.required'=>'Treść jest wymagana.',
-            'content.min'=>'Treść musi zawierać więcej niż 3 znaki.'
+            'icon.required'=>'Ikona jest wymagana (format: fa fa-book).',
+            'icon.min'=>'Ikona musi zawierać więcej niż 3 znaki (format: fa fa-book).',
+            'name.required'=>'Nazwa jest wymagana.',
+            'name.min'=>'Nazwa musi zawierać więcej niż 3 znaki.',
+            'description.required'=>'Opis jest wymagany.',
+            'description.min'=>'Opis musi zawierać więcej niż 3 znaki.'
         ]);
     }
 }

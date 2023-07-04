@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="create-section-title">
-        <h2>Stwórz wpis O Nas</h2>
+        <h2>Edytuj wpis do Nasze atuty</h2>
     </div>
     @if (Session::has('message'))
         <div class="success-feedback" role="alert">
@@ -10,29 +10,37 @@
         </div>
     @endif
     <div class="form-wrapper">
-        <form action="{{ route('o-nas.store') }}" method="post">
+        <form action="{{ route('nasze-atuty.update', [$entry->id]) }}" method="post">
             @csrf
+            <div class="formControl">
+                <label for="icon">Ikona</label>
+                <input type="text" name="icon" placeholder="Wprowadź nazwę (format: fa fa-book)"
+                    value="{{ $entry->icon }}">
+            </div>
+            @error('icon')
+                <div class="invalid-feedback" role="alert">{{ $message }}</div>
+            @enderror
             <div class="formControl">
                 <label for="name">Tytuł</label>
                 <input type="text" name="name" placeholder="Wprowadź nazwę"
-                    value="{{ old('name') }}">
+                    value="{{ $entry->name }}">
             </div>
             @error('name')
                 <div class="invalid-feedback" role="alert">{{ $message }}</div>
             @enderror
             <div class="formControl">
-                <label for="content">Treść</label>
-                <textarea name="content" rows="5"
-                placeholder="Wprowadź tekst">{{ old('content') }}</textarea>
+                <label for="description">Opis</label>
+                <textarea name="description" rows="5"
+                placeholder="Wprowadź tekst">{{ $entry->description }}</textarea>
             </div>
-            @error('content')
+            @error('description')
                 <div class="invalid-feedback" role="alert">{{ $message }}</div>
             @enderror
             <div class="formControl">
                 <button type="submit">Zapisz</button>
             </div>
         </form>
-        <a href="/admin/o-nas">
+        <a href="/admin/nasze-atuty">
             <button>Wróć</button>
         </a>
     </div>

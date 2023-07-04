@@ -88,9 +88,11 @@ input:disabled {
 }
 
 #nasze-atuty {
+    background-image: url("/img/atuty-bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    height: 700px;
 }
 
 #splaty-weksli {
@@ -392,46 +394,46 @@ input:disabled {
     text-align: center;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: auto auto;
+#nasze-atuty .zalety {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#nasze-atuty .zalety h1 {
+    font-size: 40px;
+    color: white;
+}
+
+#nasze-atuty .zalety .card-slider {
     width: 100%;
-    height: 100%;
-    gap: 20px;
-}
-
-.card-grid .card-grid-item {
-    width: 100%;
-    border-radius: 10px;
-    height: auto;
-    background-color: #1b3e7a;
-    padding: 10px 20px;
-    transition: 0.2s ease-in-out;
-}
-
-.card-grid .card-grid-item:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
-.card-grid-item .icon-header {
+    max-width: 600px;
+    height: 290px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    margin: 0 auto;
 }
 
-.card-grid-item .icon-header i {
-    color: #bf9e87;
-    font-size: 24px;
+#nasze-atuty .zalety .card-slider .atut-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
     margin-right: 10px;
+    padding: 40px 20px;
+    gap: 10px;
 }
 
-.card-grid .card-grid-item h2 {
-    color: #bf9e87;
+#nasze-atuty .zalety .card-slider .atut-card i {
+    color: #1b3e7a;
+    font-size: 54px;
 }
 
-.card-grid .card-grid-item p {
-    color: white;
+#nasze-atuty .zalety .card-slider .atut-card h1 {
+    color: #1b3e7a;
 }
 
 .jak-splacic-wrapper {
@@ -850,6 +852,7 @@ label.home-number {
     height: 100%;
     padding: 20px 30px;
     background-color: #bf9e87;
+    border-radius: 0 10px 10px 0;
 }
 
 .wspolpraca-card .content p {

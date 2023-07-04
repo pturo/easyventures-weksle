@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Atuty;
 
 class IndexController extends Controller
 {
@@ -11,7 +12,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('glowna.index');
+        $atuty = Atuty::all();
+        return view('glowna.index', compact('atuty'));
     }
 
     /**

@@ -27,10 +27,14 @@
                             <br>
                             <p>
                                 Nasza firma specjalizuje się w handlu papierami wartościowymi, konkretnie wekslami.
-                                Świadczymy usługi finansowe, które polegają na finansowaniu naszych klientów poprzez możliwość
-                                sprzedaży przez nich podpisanego weksla w zamian za gotówkę. Klient otrzymuje natychmiastowe środki
-                                finansowe i podpisuje umowę wekslową, zawierającą informacje dotyczące pierwszego nabywcy weksla
-                                i inne istotne postanowienia. Choć nasza forma finansowania nie jest tradycyjnym pożyczkowaniem,
+                                Świadczymy usługi finansowe, które polegają na finansowaniu naszych klientów poprzez
+                                możliwość
+                                sprzedaży przez nich podpisanego weksla w zamian za gotówkę. Klient otrzymuje natychmiastowe
+                                środki
+                                finansowe i podpisuje umowę wekslową, zawierającą informacje dotyczące pierwszego nabywcy
+                                weksla
+                                i inne istotne postanowienia. Choć nasza forma finansowania nie jest tradycyjnym
+                                pożyczkowaniem,
                                 kredytem ani chwilówką, zasada działania jest identyczna.
                             </p>
                         </div>
@@ -49,8 +53,8 @@
                                 <h3>Dobierz parametry weksla</h3>
                                 <div class="sliders">
                                     <label for="credit-val">Kwota weksla</label><br>
-                                    <input id="credit-val" name="credit-val" type="range" min="500"
-                                        max="2000" value="0">
+                                    <input id="credit-val" name="credit-val" type="range" min="500" max="2000"
+                                        value="0">
                                     <br>
                                     <label for="rate-val">Okres spłaty</label><br>
                                     <input id="rate-val" name="rate-val" type="range" min="1" max="36"
@@ -61,8 +65,8 @@
                                     <div id="credits-input" class="form-input">
                                         <label for="credit-text">Kwota weksla</label>
                                         <div class="custom-input">
-                                            <div><input id="credit-text" name="credit-text" type="text"
-                                                    value="0"> pln
+                                            <div><input id="credit-text" name="credit-text" type="text" value="0">
+                                                pln
                                             </div>
                                         </div>
                                     </div>
@@ -123,8 +127,8 @@
                                     <div id="city-zip">
                                         <div id="city-inner" class="form-control">
                                             <label class="city" for="city">Miejscowość</label>&nbsp;&nbsp;
-                                            <input id="city" type="text" name="city"
-                                                placeholder="Wprowadź dane" class="@error('city') is-invalid @enderror">
+                                            <input id="city" type="text" name="city" placeholder="Wprowadź dane"
+                                                class="@error('city') is-invalid @enderror">
                                         </div>
                                         <div id="zip-inner" class="form-control">
                                             <label class="zip-code" for="zip-code">Kod pocztowy</label>&nbsp;&nbsp;
@@ -184,6 +188,8 @@
 
                         var zipCode = document.getElementById('zip-code');
 
+                        var advantagesSlider = document.querySelector('.card-slider');
+
                         // get values from slider
                         creditText.value = creditVal.value;
                         rateText.value = rateVal.value;
@@ -222,6 +228,7 @@
                             }
                         }
 
+                        // Zip code formatter
                         zipCode.onkeyup = function(e) {
                             var code = this.value;
                             var key = event.keyCode || event.charCode;
@@ -235,6 +242,36 @@
                                 this.value = code.replace('--', '-');
                             }
                         };
+
+                        // Card slider (jQuery)
+                        $(document).ready(function($) {
+                            $('.card-slider').slick({
+                                dots: true,
+                                infinite: true,
+                                speed: 500,
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                autoplay: false,
+                                autoplaySpeed: 2000,
+                                arrows: true,
+                                responsive: [{
+                                        breakpoint: 600,
+                                        settings: {
+                                            slidesToShow: 2,
+                                            slidesToScroll: 1
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 400,
+                                        settings: {
+                                            arrows: false,
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
+                                    }
+                                ]
+                            });
+                        });
                     </script>
                 </div>
             </div>
@@ -242,54 +279,18 @@
         <section id="nasze-atuty">
             <div class="row">
                 <div class="zalety padding-15">
-                    <h1>Dlaczego warto nas wybrać?</h1>
+                    <h1>Nasze atuty</h1>
                     <br>
-                    <div class="card-grid">
-                        <div class="card-grid-item">
-                            <div class="icon-header">
-                                <i class="fa fa-search"></i>
-                                <h2>Brak ukrytych druczków</h2>
+                    <div class="card-slider">
+                        @forelse ($atuty as $atut)
+                            <div class="atut-card">
+                                <i class="{{ $atut->icon }}"></i>
+                                <h1>{{ $atut->name }}</h1>
+                                <p>{{ $atut->description }}</p>
                             </div>
-                            <p>
-                                Stawiamy przede wszystkim na prostotę i tak też jest w przypadku
-                                zawierania umów wekslowych.
-                                Nasze zasady są jasne i przejrzyste dla klientów.
-                            </p>
-                        </div>
-                        <div class="card-grid-item">
-                            <div class="icon-header">
-                                <i class="fa fa-line-chart"></i>
-                                <h2>Bogate doświadczenie</h2>
-                            </div>
-                            <p>
-                                Doświadczenie to nasz główny atut. W naszej firmie pracuje szereg
-                                wykwalifikowanych pracowników,
-                                którzy zawsze służą swoją wiedzą i pomocą podczas zawierania umów
-                                wekslowych.
-                            </p>
-                        </div>
-                        <div class="card-grid-item">
-                            <div class="icon-header">
-                                <i class="fa fa-thumbs-up"></i>
-                                <h2>Współpraca</h2>
-                            </div>
-                            <p>
-                                Prowadzimy współpracę z przedstawicielami naszej branży z całej Polski,
-                                posiadającymi własne bazy klientów,
-                                którym można udzielić finansowania i przy okazji polecić nasze usługi.
-                            </p>
-                        </div>
-                        <div class="card-grid-item">
-                            <div class="icon-header">
-                                <i class="fa fa-ticket"></i>
-                                <h2>Niezawodne wsparcie</h2>
-                            </div>
-                            <p>
-                                Czasami może się zdarzyć sytuacja, w których potrzebna będzie pomoc i od
-                                tego właśnie jesteśmy. Chętnie
-                                pomożemy rozwiązać trudności związane ze spłatą należności.
-                            </p>
-                        </div>
+                        @empty
+                            <div class="empty">Nie ma żadnych wpisów.</div>
+                        @endforelse
                     </div>
                 </div>
             </div>
@@ -461,7 +462,7 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.14931891664833!2d16.9054767039234!3d52.3996239048731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b2d3dd055cb%3A0x99a5d242f3a409e8!2sG%C5%82ogowska%2031-33%2C%2060-702%20Pozna%C5%84!5e0!3m2!1spl!2spl!4v1687514877498!5m2!1spl!2spl"
                             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <div></div>
+                        <div></div>
                     </div>
                 </div>
             </div>

@@ -79,11 +79,11 @@
                                 </a>
                             </div>
                             <div class="side-list-item" data-index="3">
-                                <a href="#">
+                                <a href="{{ route('nasze-atuty.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <div class="list-item-text">NAWIGACJA 3</div>
+                                    <div class="list-item-text">Sekcja Nasze atuty</div>
                                 </a>
                             </div>
                         </div>
