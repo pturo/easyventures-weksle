@@ -86,6 +86,14 @@
                                     <div class="list-item-text">Sekcja Nasze atuty</div>
                                 </a>
                             </div>
+                            <div class="side-list-item" data-index="3">
+                                <a href="{{ route('wspolpraca.index') }}">
+                                    <div class="list-item-icon">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="list-item-text">Sekcja Współpraca</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

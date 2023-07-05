@@ -31,8 +31,9 @@
                                 </a>
                             </div>
                             <div class="delete">
-                                <form action="" method="post">
+                                <form action="{{ route('o-nas.destroy', [$entry->id]) }}" method="post">
                                     {{ method_field('DELETE') }}
+                                    @csrf
                                     <button type="submit">Usuń</button>
                                 </form>
                             </div>

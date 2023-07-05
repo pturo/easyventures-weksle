@@ -23,20 +23,13 @@
                 <div class="o-nas padding-15">
                     <div class="card-wrapper">
                         <div class="intro-card">
-                            <h1>Kim jesteśmy?</h1>
-                            <br>
-                            <p>
-                                Nasza firma specjalizuje się w handlu papierami wartościowymi, konkretnie wekslami.
-                                Świadczymy usługi finansowe, które polegają na finansowaniu naszych klientów poprzez
-                                możliwość
-                                sprzedaży przez nich podpisanego weksla w zamian za gotówkę. Klient otrzymuje natychmiastowe
-                                środki
-                                finansowe i podpisuje umowę wekslową, zawierającą informacje dotyczące pierwszego nabywcy
-                                weksla
-                                i inne istotne postanowienia. Choć nasza forma finansowania nie jest tradycyjnym
-                                pożyczkowaniem,
-                                kredytem ani chwilówką, zasada działania jest identyczna.
-                            </p>
+                            @if ($onas != null)
+                                <h1>{{ $onas->name }}</h1>
+                                <br>
+                                <p>{{ $onas->content }}</p>
+                            @else
+                                <div class="empty">Brak wpisu.</div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -175,104 +168,6 @@
                             </div>
                         </form>
                     </div>
-                    <script>
-                        var creditVal = document.getElementById('credit-val');
-                        var rateVal = document.getElementById('rate-val');
-                        var creditText = document.getElementById('credit-text');
-                        var rateText = document.getElementById('rate-text');
-                        var credit = document.getElementById('credits');
-                        var rate = document.getElementById('rate');
-
-                        var buttonShowHide = document.getElementById('buttonShowHide');
-                        var showHideForm = document.getElementById('show-hide');
-
-                        var zipCode = document.getElementById('zip-code');
-
-                        var advantagesSlider = document.querySelector('.card-slider');
-
-                        // get values from slider
-                        creditText.value = creditVal.value;
-                        rateText.value = rateVal.value;
-                        credit.value = creditVal.value;
-                        rate.value = rateVal.value;
-
-                        creditVal.oninput = function() {
-                            creditText.value = this.value;
-                            credit.value = this.value;
-                        }
-
-                        rateVal.oninput = function() {
-                            rateText.value = this.value;
-                            rate.value = this.value;
-                        }
-
-                        // get values to slider
-                        creditVal.value = creditText.value;
-                        rateVal.value = rateText.value;
-                        creditVal.value = credit.value;
-                        rateVal.value = rate.value;
-
-                        creditText.oninput = function() {
-                            creditVal.value = this.value;
-                            credit.value = this.value;
-                        }
-
-                        rateText.oninput = function() {
-                            rateVal.value = this.value;
-                            rate.value = this.value;
-                        }
-
-                        buttonShowHide.onclick = function() {
-                            if (showHideForm.style.display == "none") {
-                                showHideForm.style.display = "block";
-                            }
-                        }
-
-                        // Zip code formatter
-                        zipCode.onkeyup = function(e) {
-                            var code = this.value;
-                            var key = event.keyCode || event.charCode;
-
-                            if (this.value.length == 2) {
-                                if (key == 8 || key == 46) {} else {
-                                    this.value = (code + '-');
-                                }
-                            }
-                            if (this.value.indexOf('--') !== -1) {
-                                this.value = code.replace('--', '-');
-                            }
-                        };
-
-                        // Card slider (jQuery)
-                        $(document).ready(function($) {
-                            $('.card-slider').slick({
-                                dots: true,
-                                infinite: true,
-                                speed: 500,
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                autoplay: false,
-                                autoplaySpeed: 2000,
-                                arrows: true,
-                                responsive: [{
-                                        breakpoint: 600,
-                                        settings: {
-                                            slidesToShow: 2,
-                                            slidesToScroll: 1
-                                        }
-                                    },
-                                    {
-                                        breakpoint: 400,
-                                        settings: {
-                                            arrows: false,
-                                            slidesToShow: 1,
-                                            slidesToScroll: 1
-                                        }
-                                    }
-                                ]
-                            });
-                        });
-                    </script>
                 </div>
             </div>
         </section>
@@ -433,20 +328,16 @@
                     <div class="wspolpraca-card">
                         <div class="background"></div>
                         <div class="content">
-                            <p>
-                                Cieszymy się, że możemy współpracować z naszymi agentami. Jesteśmy przekonani,
-                                że nasza działalność finansowa przyniesie znaczące korzyści Państwa klientom.
-                                Nasza firma oferuje szybkie i skuteczne rozwiązania finansowe oparte na sprzedaży weksli.
-                                Dzięki naszemu wsparciu, agenci będą mieli możliwość skorzystania z natychmiastowej gotówki,
-                                co przyczyni się do zwiększenia ich elastyczności finansowej. Jesteśmy otwarci na
-                                długoterminową współpracę i zapewniamy profesjonalne podejście w obsłudze klienta.
-                                Razem możemy osiągnąć sukces i przyczynić się do wzrostu biznesu agentów z całej Polski.
-                            </p>
-                            <div class="center">
-                                <a href="">
-                                    <button>Dowiedz się więcej</button>
-                                </a>
-                            </div>
+                            @if ($wspolpraca != null)
+                                <p>{{ $wspolpraca->content }}</p>
+                                <div class="center">
+                                    <a href="">
+                                        <button>Dowiedz się więcej</button>
+                                    </a>
+                                </div>
+                            @else
+                                <div class="empty">Brak wpisu.</div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -468,4 +359,102 @@
             </div>
         </section>
     </div>
+    <script>
+        var creditVal = document.getElementById('credit-val');
+        var rateVal = document.getElementById('rate-val');
+        var creditText = document.getElementById('credit-text');
+        var rateText = document.getElementById('rate-text');
+        var credit = document.getElementById('credits');
+        var rate = document.getElementById('rate');
+
+        var buttonShowHide = document.getElementById('buttonShowHide');
+        var showHideForm = document.getElementById('show-hide');
+
+        var zipCode = document.getElementById('zip-code');
+
+        var advantagesSlider = document.querySelector('.card-slider');
+
+        // get values from slider
+        creditText.value = creditVal.value;
+        rateText.value = rateVal.value;
+        credit.value = creditVal.value;
+        rate.value = rateVal.value;
+
+        creditVal.oninput = function() {
+            creditText.value = this.value;
+            credit.value = this.value;
+        }
+
+        rateVal.oninput = function() {
+            rateText.value = this.value;
+            rate.value = this.value;
+        }
+
+        // get values to slider
+        creditVal.value = creditText.value;
+        rateVal.value = rateText.value;
+        creditVal.value = credit.value;
+        rateVal.value = rate.value;
+
+        creditText.oninput = function() {
+            creditVal.value = this.value;
+            credit.value = this.value;
+        }
+
+        rateText.oninput = function() {
+            rateVal.value = this.value;
+            rate.value = this.value;
+        }
+
+        buttonShowHide.onclick = function() {
+            if (showHideForm.style.display == "none") {
+                showHideForm.style.display = "block";
+            }
+        }
+
+        // Zip code formatter
+        zipCode.onkeyup = function(e) {
+            var code = this.value;
+            var key = event.keyCode || event.charCode;
+
+            if (this.value.length == 2) {
+                if (key == 8 || key == 46) {} else {
+                    this.value = (code + '-');
+                }
+            }
+            if (this.value.indexOf('--') !== -1) {
+                this.value = code.replace('--', '-');
+            }
+        };
+
+        // Card slider (jQuery)
+        $(document).ready(function($) {
+            $('.card-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                arrows: true,
+                responsive: [{
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
 @endsection

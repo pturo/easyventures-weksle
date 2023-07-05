@@ -30,6 +30,8 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('o-nas', 'ONasController')->middleware('auth', 'verified');
     // Nasze atuty
     Route::resource('nasze-atuty', 'AtutyController')->middleware('auth', 'verified');
+    // Współpraca
+    Route::resource('wspolpraca', 'WspolpracaController')->middleware('auth', 'verified');
 });
 
 
