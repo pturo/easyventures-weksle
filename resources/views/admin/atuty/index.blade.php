@@ -1,16 +1,16 @@
 @extends('admin.layout.admin-layout')
 
 @section('content')
-    <div class="nasze-atuty-title">
+    <div class="general-title">
         <h2>Nasze atuty</h2>
     </div>
-    <div class="nasze-atuty-subtitle">
+    <div class="general-subtitle">
         <h4>
             Tutaj możesz zarządzać treścią, która znajduje się w sekcji "Nasze atuty"
             na stronie głównej naweksel.strondlafirm.hekko24.pl.
         </h4>
     </div>
-    <div class="nasze-atuty-wrapper">
+    <div class="general-wrapper">
         <div class="add-section">
             <a href="{{ route('nasze-atuty.create') }}">
                 <button>Dodaj wpis</button>

@@ -1,23 +1,27 @@
 @extends('admin.layout.admin-layout')
 
 @section('content')
-    <div class="wspolpraca-title">
-        <h2>O nas</h2>
+    <div class="general-title">
+        <h2>Współpraca</h2>
     </div>
-    <div class="wspolpraca-subtitle">
+    <div class="general-subtitle">
         <h4>
             Tutaj możesz zarządzać treścią, która znajduje się w sekcji "Współpraca"
             na stronie głównej naweksel.strondlafirm.hekko24.pl.
         </h4>
     </div>
-    <div class="wspolpraca-wrapper">
+    <div class="general-wrapper">
         <div class="add-section">
             <a href="{{ route('wspolpraca.create') }}">
                 <button>Dodaj wpis</button>
             </a>
         </div>
         <div class="list-of-sections">
-            <h4>Lista dodanych treści do sekcji O Nas</h4>
+            <h4>Lista dodanych treści do sekcji Współpraca</h4>
+            <p>
+                Uwaga: Ta sekcja wyświetla tylko najnowszy wpis, dlatego jeśli
+                potrzeba wyświetlić inny, można zedytować obecny wpis lub go usunąć.
+            </p>
             @forelse ($entries as $key=>$entry)
                 <div class="entries">
                     <div class="entry-card">

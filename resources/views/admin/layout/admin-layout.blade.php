@@ -64,7 +64,7 @@
                                 data-index="1">
                                 <a href="{{ route('dashboard.index') }}">
                                     <div class="list-item-icon">
-                                        <i class="fa fa-marker"></i>
+                                        <i class="fa fa-star"></i>
                                     </div>
                                     <div class="list-item-text">Panel główny</div>
                                 </a>
@@ -73,7 +73,7 @@
                                 data-index="2">
                                 <a href="{{ route('o-nas.index') }}">
                                     <div class="list-item-icon">
-                                        <i class="fa fa-book"></i>
+                                        <i class="fa fa-star"></i>
                                     </div>
                                     <div class="list-item-text">Sekcja O nas</div>
                                 </a>

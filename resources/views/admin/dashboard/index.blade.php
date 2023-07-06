@@ -18,27 +18,27 @@
         </div>
         <div class="shortcut-grid">
             <div class="grid-item">
-                <a href="#">
-                    <div class="grid-icon">
-                        <i class="fa fa-book"></i>
-                    </div>
-                    <div class="grid-text">Text</div>
-                </a>
-            </div>
-            <div class="grid-item">
-                <a href="#">
+                <a href="{{ route('o-nas.index') }}">
                     <div class="grid-icon">
                         <i class="fa fa-star"></i>
                     </div>
-                    <div class="grid-text">Text</div>
+                    <div class="grid-text">Sekcja O Nas</div>
                 </a>
             </div>
             <div class="grid-item">
-                <a href="#">
+                <a href="{{ route('nasze-atuty.index') }}">
                     <div class="grid-icon">
-                        <i class="fa fa-map"></i>
+                        <i class="fa fa-star"></i>
                     </div>
-                    <div class="grid-text">Text</div>
+                    <div class="grid-text">Sekcja Nasze atuty</div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="{{ route('wspolpraca.index') }}">
+                    <div class="grid-icon">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="grid-text">Sekcja Współpraca</div>
                 </a>
             </div>
             <div class="grid-item">

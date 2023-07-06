@@ -465,30 +465,30 @@ button:hover {
 
 .container .main-content .fillable-content .content-container
 .dashboard-wrapper .shortcut-grid .grid-item a .grid-text {
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
 }
 
-/*o nas*/
+/*o nas/atuty/współpraca*/
 .container .main-content .fillable-content .content-container
-.o-nas-title {
+.general-title {
     margin-bottom: 20px;
     text-align: center;
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-title h2 {
+.general-title h2 {
     color: var(--primary-color);
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-subtitle {
+.general-subtitle {
     margin-bottom: 20px;
     text-align: center;
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper {
+.general-wrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -496,26 +496,26 @@ button:hover {
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper .add-section {
+.general-wrapper .add-section {
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper .list-of-sections {
+.general-wrapper .list-of-sections {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper .list-of-sections h4 {
+.general-wrapper .list-of-sections h4, p {
     text-align: center;
     margin-bottom: 10px;
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper .list-of-sections .entries {
+.general-wrapper .list-of-sections .entries {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -523,7 +523,7 @@ button:hover {
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper .list-of-sections .entries .entry-card {
+.general-wrapper .list-of-sections .entries .entry-card {
     width: auto;
     padding: 10px 20px;
     border: 1px solid var(--primary-color);
@@ -539,13 +539,13 @@ button:hover {
 }
 
 .container .main-content .fillable-content .content-container
-.o-nas-wrapper .list-of-sections .entries .entry-card .options {
+.general-wrapper .list-of-sections .entries .entry-card .options {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
 
-/*o nas:create & edit*/
+/*o nas/atuty/współpraca:create & edit*/
 .container .main-content .fillable-content .content-container
 .create-section-title {
     margin-bottom: 20px;
@@ -554,11 +554,6 @@ button:hover {
 
 .container .main-content .fillable-content .content-container
 .create-section-title h2 {
-    color: var(--primary-color);
-}
-
-.container .main-content .fillable-content .content-container
-.o-nas-title h2 {
     color: var(--primary-color);
 }
 
@@ -611,158 +606,6 @@ button:hover {
 .container .main-content .fillable-content .content-container
 .form-wrapper form .formControl button {
     margin: 0 auto;
-}
-
-/* nasze atuty */
-.container .main-content .fillable-content .content-container
-.nasze-atuty-title {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-title h2 {
-    color: var(--primary-color);
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-subtitle {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper .add-section {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper .list-of-sections {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper .list-of-sections h4 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper .list-of-sections .entries {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper .list-of-sections .entries .entry-card {
-    width: auto;
-    padding: 10px 20px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    gap: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.container .main-content .fillable-content .content-container
-.nasze-atuty-wrapper .list-of-sections .entries .entry-card .options {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-/* współpraca */
-.container .main-content .fillable-content .content-container
-.wspolpraca-title {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca h2 {
-    color: var(--primary-color);
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-subtitle {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper .add-section {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper .list-of-sections {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper .list-of-sections h4 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper .list-of-sections .entries {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper .list-of-sections .entries .entry-card {
-    width: auto;
-    padding: 10px 20px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    gap: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.container .main-content .fillable-content .content-container
-.wspolpraca-wrapper .list-of-sections .entries .entry-card .options {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
 }
 
 /* footer */
