@@ -26,11 +26,11 @@ Route::group(['prefix'=>'admin'], function() {
     Route::post('/login', 'LoginController@store')->name('login.store');
     Route::post('/logout', 'LoginController@logout')->name('login.logout');
     Route::get('/dashboard', 'AdminController@index')->middleware('auth', 'verified')->name('dashboard.index');
-    // O Nas
+    // Główna: O Nas
     Route::resource('o-nas', 'ONasController')->middleware('auth', 'verified');
-    // Nasze atuty
+    // Główna: Nasze atuty
     Route::resource('nasze-atuty', 'AtutyController')->middleware('auth', 'verified');
-    // Współpraca
+    // Główna: Współpraca
     Route::resource('wspolpraca', 'WspolpracaController')->middleware('auth', 'verified');
 });
 

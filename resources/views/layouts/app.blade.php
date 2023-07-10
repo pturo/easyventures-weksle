@@ -50,16 +50,16 @@
                     <div class="padding-15">
                         <div class="nav-items-wrapper">
                             <div class="logo">
-                                <a href="/glowna">
+                                <a href="{{ route('index.index') }}">
                                     <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="naweksel-logo" width="150" height="90">
                                 </a>
                             </div>
                             <div class="nav-wrapper">
                                 <nav>
                                     <ul class="nav-menu">
-                                        <li><a href="">WARUNKI FINANSOWANIA</a></li>
-                                        <li><a href="">WSPÓŁPRACA</a></li>
-                                        <li><a href="">KONTAKT</a></li>
+                                        <li><a href="#splaty-weksli">WARUNKI FINANSOWANIA</a></li>
+                                        <li><a href="#wspolpraca">WSPÓŁPRACA</a></li>
+                                        <li><a href="#kontakt">KONTAKT</a></li>
                                         <li>
                                             <div class="nav-phone">
                                                 <i class="fa fa-phone"></i>

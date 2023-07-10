@@ -11,7 +11,7 @@
             </a>
         </div>
         <div class="sticky-right-menu">
-            <a href="#glowna_5">
+            <a href="#znajdz-nas">
                 <span>
                     <i class="fa fa-map"></i>
                 </span>
@@ -338,6 +338,25 @@
                             @else
                                 <div class="empty">Brak wpisu.</div>
                             @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="kontakt">
+            <div class="row">
+                <div class="contact padding-15">
+                    <div class="kontakt-card">
+                        <h1>Masz pytania? Skontaktuj się z nami!</h1>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <i class="fa fa-phone"></i>
+                                <h2>Telefon</h2>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <h2>Email</h2>
+                            </div>
                         </div>
                     </div>
                 </div>

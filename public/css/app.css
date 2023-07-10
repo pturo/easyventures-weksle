@@ -75,19 +75,20 @@ input:disabled {
 }
 
 /* DIV CLASSES */
+/* główna */
 .glowna {
     padding-top: 67px;
 }
 
-#o-firmie {
+.glowna #o-firmie {
     background-image: url("/img/happy-weksel-woman.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 700px;
+    height: 900px;
 }
 
-#nasze-atuty {
+.glowna #nasze-atuty {
     background-image: url("/img/atuty-bg.webp");
     background-size: cover;
     background-repeat: no-repeat;
@@ -95,35 +96,37 @@ input:disabled {
     height: 700px;
 }
 
-#splaty-weksli {
+.glowna #splaty-weksli {
+    scroll-margin-top: 150px;
     width: 100%;
     background-color: #bf9e87;
 }
 
-#kalkulator-wekslowy {
+.glowna #kalkulator-wekslowy {
     width: 100%;
     height: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-#wspolpraca {
+.glowna #wspolpraca {
+    scroll-margin-top: 150px;
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-#znajdz-nas {
-    scroll-margin-top: 100px;
+.glowna #kontakt {
+    scroll-margin-top: 150px;
     width: 100%;
-    height: max-content;
+    background-color: #1b3e7a;
+    margin-bottom: 30px;
 }
 
-.section-content {
-    min-height: 100vh;
-    display: block;
-    padding: 0 30px;
-    opacity: 1;
+.glowna #znajdz-nas {
+    scroll-margin-top: 150px;
+    width: 100%;
+    height: max-content;
 }
 
 .header {
@@ -429,11 +432,12 @@ input:disabled {
 
 #nasze-atuty .zalety .card-slider .atut-card i {
     color: #1b3e7a;
-    font-size: 54px;
+    font-size: 42px;
 }
 
 #nasze-atuty .zalety .card-slider .atut-card h1 {
     color: #1b3e7a;
+    font-size: 32px;
 }
 
 .jak-splacic-wrapper {
@@ -866,6 +870,42 @@ label.home-number {
     text-align: center;
 }
 
+#kontakt .row .contact h1 {
+    color: white;
+}
+
+#kontakt .row .kontakt-card {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#kontakt .row .kontakt-card .contact-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#kontakt .row .kontakt-card .contact-items .contact-item {
+    width: 50%;
+    height: max-content;
+    padding: 10px 20px;
+    background-color: #bf9e87;
+    border-radius: 10px;
+    border: 1px solid #1b3e7a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#kontakt .row .kontakt-card .contact-items .contact-item i {
+    font-size: 28px;
+    color: white;
+}
+
 .g-map {
     width: 100%;
     height: max-content;
@@ -883,6 +923,16 @@ label.home-number {
 }
 
 /* OTHER SETTINGS */
+@media (min-width: 1100px) {
+    #o-firmie {
+        height: 950px;
+        background-image: url("/img/happy-weksel-woman-center.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
 @media (max-width: 1000px) {
     .wspolpraca-card {
         flex-direction: column;
@@ -957,23 +1007,11 @@ label.home-number {
         width: 100%;
         top: calc(700px - 40%);
     }
-
-    #o-firmie {
-        height: 750px;
-    }
 }
 
 @media (max-width: 700px) {
     .glowna {
         padding-top: 139px;
-    }
-
-    #o-firmie {
-        height: 950px;
-        background-image: url("/img/happy-weksel-woman-center.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
     }
 
     #city-zip {
@@ -1071,19 +1109,23 @@ label.home-number {
 @media (max-width: 600px) {
     .intro-card {
         width: 100%;
-        top: calc(700px - 40%);
+        top: calc(700px - 60%);
+    }
+
+    #nasze-atuty .zalety .card-slider {
+        height: max-content;
+    }
+
+    #kontakt .row .contact .kontakt-card .contact-items {
+        flex-direction: column;
+    }
+
+    #kontakt .row .contact .kontakt-card .contact-items .contact-item {
+        width: 100%;
     }
 }
 
 @media (max-width: 530px) {
-    .card-grid {
-        display: block;
-    }
-
-    .card-grid .card-grid-item {
-        margin-bottom: 10px;
-    }
-
     .jak-splacic-wrapper {
         flex-direction: column;
     }
