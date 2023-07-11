@@ -75,12 +75,6 @@ input:disabled {
 }
 
 /* DIV CLASSES */
-/* global styles */
-.empty {
-    color: red;
-    text-align: center;
-}
-
 /* główna */
 .glowna {
     padding-top: 67px;

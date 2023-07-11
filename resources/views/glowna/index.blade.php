@@ -349,14 +349,14 @@
                     <div class="kontakt-card">
                         <h1>Masz pytania? Skontaktuj się z nami!</h1>
                         <div class="contact-items">
-                            <div class="contact-item">
-                                <i class="fa fa-phone"></i>
-                                <h2>Telefon</h2>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fa fa-envelope"></i>
-                                <h2>Email</h2>
-                            </div>
+                            @forelse ($kontakt as $contact)
+                                <div class="contact-item">
+                                    <i class="{{ $contact->icon }}"></i>
+                                    <h2>{{ $contact->content }}</h2>
+                                </div>
+                            @empty
+                                <div class="empty">Brak wpisów.</div>
+                            @endforelse
                         </div>
                     </div>
                 </div>

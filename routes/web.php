@@ -32,6 +32,10 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('nasze-atuty', 'AtutyController')->middleware('auth', 'verified');
     // Główna: Współpraca
     Route::resource('wspolpraca', 'WspolpracaController')->middleware('auth', 'verified');
+    // Główna: Kontakt
+    Route::resource('kontakt', 'KontaktController')->middleware('auth', 'verified');
+    // Lista ikon
+    Route::get('lista-ikon', 'ListaIkonController@index')->middleware('auth', 'verified')->name('lista-icon.index');
 });
 
 

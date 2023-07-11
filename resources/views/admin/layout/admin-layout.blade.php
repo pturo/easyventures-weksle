@@ -78,7 +78,7 @@
                                     <div class="list-item-text">Sekcja O nas</div>
                                 </a>
                             </div>
-                            <div class="side-list-item" data-index="3">
+                            <div class="side-list-item{{ request()->is('nasze-atuty.index') ? ' active' : '' }}">
                                 <a href="{{ route('nasze-atuty.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
@@ -86,12 +86,28 @@
                                     <div class="list-item-text">Sekcja Nasze atuty</div>
                                 </a>
                             </div>
-                            <div class="side-list-item" data-index="3">
+                            <div class="side-list-item{{ request()->is('wspolpraca.index') ? ' active' : '' }}">
                                 <a href="{{ route('wspolpraca.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
                                     </div>
                                     <div class="list-item-text">Sekcja Współpraca</div>
+                                </a>
+                            </div>
+                            <div class="side-list-item{{ request()->is('kontakt.index') ? ' active' : '' }}">
+                                <a href="{{ route('kontakt.index') }}">
+                                    <div class="list-item-icon">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="list-item-text">Sekcja Kontakt</div>
+                                </a>
+                            </div>
+                            <div class="side-list-item{{ request()->is('lista-icon.index') ? ' active' : '' }}">
+                                <a href="{{ route('lista-icon.index') }}">
+                                    <div class="list-item-icon">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="list-item-text">Lista ikon Font Awesome</div>
                                 </a>
                             </div>
                         </div>

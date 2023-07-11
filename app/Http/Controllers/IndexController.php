@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Atuty;
 use App\Models\ONas;
 use App\Models\Wspolpraca;
+use App\Models\Kontakt;
 
 class IndexController extends Controller
 {
@@ -17,7 +18,8 @@ class IndexController extends Controller
         $atuty = Atuty::all();
         $onas = ONas::latest()->first();
         $wspolpraca = Wspolpraca::latest()->first();
-        return view('glowna.index', compact('atuty', 'onas', 'wspolpraca'));
+        $kontakt = Kontakt::all();
+        return view('glowna.index', compact('atuty', 'onas', 'wspolpraca', 'kontakt'));
     }
 
     /**
