@@ -350,7 +350,7 @@ button:hover {
     flex-direction: row;
     align-items: center;
     margin: auto;
-    justify-content: center;
+    margin-left: 1rem;
 }
 
 .container .main-content .side-nav .side-nav-wrapper
@@ -469,7 +469,7 @@ button:hover {
     text-align: center;
 }
 
-/*o nas/atuty/współpraca*/
+/*o nas/atuty/współpraca/lista-font-awesome*/
 .container .main-content .fillable-content .content-container
 .general-title {
     margin-bottom: 20px;
@@ -506,6 +506,28 @@ button:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+}
+
+/* font awesome */
+.container .main-content .fillable-content .content-container
+.general-wrapper .add-section h4 {
+    color: var(--primary-color);
+}
+
+.container .main-content .fillable-content .content-container
+.general-wrapper .list-of-sections .list-of-icons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .main-content .fillable-content .content-container
+.general-wrapper .list-of-sections .list-of-icons .fa-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .container .main-content .fillable-content .content-container

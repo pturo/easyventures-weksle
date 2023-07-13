@@ -29,7 +29,7 @@
                     <div class="logo">
                         <a href="{{ route('dashboard.index') }}">
                             <img src="{{ asset('img/easyventure-logo-admin.png') }}" alt="easyventures-logo-admin"
-                            width="150" height="60">
+                                width="150" height="60">
                         </a>
                     </div>
                     <div class="header-tools">
@@ -60,8 +60,7 @@
                             <hr color="white">
                         </div>
                         <div class="side-list">
-                            <div class="side-list-item{{ request()->is('dashboard.index') ? ' active' : '' }}"
-                                data-index="1">
+                            <div class="side-list-item{{ request()->is('dashboard.index') ? ' active' : '' }}">
                                 <a href="{{ route('dashboard.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
@@ -69,8 +68,7 @@
                                     <div class="list-item-text">Panel główny</div>
                                 </a>
                             </div>
-                            <div class="side-list-item{{ request()->is('o-nas.index') ? ' active' : '' }}"
-                                data-index="2">
+                            <div class="side-list-item{{ request()->is('o-nas.index') ? ' active' : '' }}">
                                 <a href="{{ route('o-nas.index') }}">
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
@@ -107,7 +105,7 @@
                                     <div class="list-item-icon">
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <div class="list-item-text">Lista ikon Font Awesome</div>
+                                    <div class="list-item-text">Lista ikon</div>
                                 </a>
                             </div>
                         </div>
@@ -125,23 +123,43 @@
     </div>
 </body>
 <script>
-    // Theme switcher
-    var getCurrentTheme = document.body;
+    document.addEventListener('DOMContentLoaded', function() {
+        let themeVal = localStorage.getItem('admin-theme');
+        let theme = JSON.parse(themeVal);
 
-    var getSwitcher = document.getElementById('themeSwitcher');
-    var getName = document.getElementById('current-theme');
+        // Theme switcher
+        var getCurrentTheme = document.body;
 
-    getSwitcher.addEventListener('change', function() {
-        if (getSwitcher.checked) {
-            getName.textContent = "Aktualny motyw: Light Coffee";
-            getCurrentTheme.classList.remove('dark-blue-theme');
-            getCurrentTheme.classList.add('light-coffee-theme');
-        } else {
-            getName.textContent = "Aktualny motyw: Dark Blue";
-            getCurrentTheme.classList.remove('light-coffee-theme');
-            getCurrentTheme.classList.add('dark-blue-theme');
+        var getSwitcher = document.getElementById('themeSwitcher');
+        var getName = document.getElementById('current-theme');
+
+        getSwitcher.addEventListener('change', function() {
+            if (getSwitcher.checked) {
+                getName.textContent = "Aktualny motyw: Light Coffee";
+                getCurrentTheme.classList.remove('dark-blue-theme');
+                getCurrentTheme.classList.add('light-coffee-theme');
+                localStorage.setItem('admin-theme', JSON.stringify(getCurrentTheme.classList.value));
+            } else {
+                getName.textContent = "Aktualny motyw: Dark Blue";
+                getCurrentTheme.classList.remove('light-coffee-theme');
+                getCurrentTheme.classList.add('dark-blue-theme');
+                localStorage.setItem('admin-theme', JSON.stringify(getCurrentTheme.classList.value));
+            }
+        });
+
+        // Restore theme on page load
+        if (theme) {
+            getCurrentTheme.classList = theme;
+            if (theme.includes('light-coffee-theme')) {
+                getSwitcher.checked = true;
+                getName.textContent = "Aktualny motyw: Light Coffee";
+            } else {
+                getSwitcher.checked = false;
+                getName.textContent = "Aktualny motyw: Dark Blue";
+            }
         }
     });
+
 
     // Switching side nav item link active
     // Get all the side-list-item elements
