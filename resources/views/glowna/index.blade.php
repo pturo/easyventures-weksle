@@ -22,14 +22,17 @@
             <div class="row">
                 <div class="o-nas padding-15">
                     <div class="card-wrapper">
-                        <div class="intro-card">
-                            @if ($onas != null)
-                                <h1>{{ $onas->name }}</h1>
-                                <br>
-                                <p>{{ $onas->content }}</p>
-                            @else
-                                <div class="empty">Brak wpisu.</div>
-                            @endif
+                        <div class="invisible"></div>
+                        <div class="card-placeholder">
+                            <div class="intro-card">
+                                @if ($onas != null)
+                                    <h1>{{ $onas->name }}</h1>
+                                    <br>
+                                    <p>{{ $onas->content }}</p>
+                                @else
+                                    <div class="empty">Brak wpisu.</div>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,9 +177,7 @@
         <section id="nasze-atuty">
             <div class="row">
                 <div class="zalety padding-15">
-                    <h1>Nasze atuty</h1>
-                    <br>
-                    <div class="card-slider">
+                    {{-- <div class="card-slider">
                         @forelse ($atuty as $atut)
                             <div class="atut-card">
                                 <i class="{{ $atut->icon }}"></i>
@@ -186,6 +187,23 @@
                         @empty
                             <div class="empty">Nie ma żadnych wpisów.</div>
                         @endforelse
+                    </div> --}}
+                    <div class="full-view">
+                        <h1>Nasze atuty</h1>
+                        <br>
+                        <div class="card-grid">
+                            @forelse ($atuty as $atut)
+                                <div class="card-grid-item">
+                                    <i class="{{ $atut->icon }}"></i>
+                                    <div class="more">
+                                        <h1>{{ $atut->name }}</h1>
+                                        <p>{{ $atut->description }}</p>
+                                    </div>
+                                </div>
+                            @empty
+                                <div class="empty">Nie ma żadnych wpisów.</div>
+                            @endforelse
+                        </div>
                     </div>
                 </div>
             </div>
@@ -447,33 +465,51 @@
         };
 
         // Card slider (jQuery)
-        $(document).ready(function($) {
-            $('.card-slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: false,
-                autoplaySpeed: 2000,
-                arrows: true,
-                responsive: [{
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 400,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
+        // $(document).ready(function($) {
+        //     $('.card-slider').slick({
+        //         dots: true,
+        //         infinite: true,
+        //         speed: 500,
+        //         slidesToShow: 1,
+        //         slidesToScroll: 1,
+        //         autoplay: false,
+        //         autoplaySpeed: 2000,
+        //         arrows: true,
+        //         responsive: [{
+        //                 breakpoint: 600,
+        //                 settings: {
+        //                     slidesToShow: 1,
+        //                     slidesToScroll: 1
+        //                 }
+        //             },
+        //             {
+        //                 breakpoint: 400,
+        //                 settings: {
+        //                     arrows: false,
+        //                     slidesToShow: 1,
+        //                     slidesToScroll: 1
+        //                 }
+        //             }
+        //         ]
+        //     });
+        // });
+
+        var z = 999;
+        $(function() {
+            $('.card-grid-item').click(function() {
+                var $more = $(this).find('.more')
+                $more.css('z-index', z).show();
+                z++;
+
+                var h = $more.height();
+                $(this).height(h);
+            })
+
+            $('.more').click(function(event) {
+                event.stopPropagation();
+                $(this).hide();
+                $('.card-grid-item').height(100);
+            })
+        })
     </script>
 @endsection
