@@ -929,16 +929,6 @@ label.home-number {
 }
 
 /* OTHER SETTINGS */
-@media (min-width: 1100px) {
-    #o-firmie {
-        height: 950px;
-        background-image: url("/img/happy-weksel-woman-center.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
-
 @media (max-width: 1000px) {
     .wspolpraca-card {
         flex-direction: column;
@@ -973,6 +963,7 @@ label.home-number {
 
     .kalkulator-form .form-wrapper .left-form {
         width: 100%;
+        padding-top: 5rem;
     }
 
     #credits-input > div > input {
@@ -1113,6 +1104,12 @@ label.home-number {
 }
 
 @media (max-width: 600px) {
+    #o-firmie {
+        height: 950px !important;
+        background-image: url("/img/happy-weksel-woman-center.webp") !important;
+        background-position: center !important;
+    }
+
     .intro-card {
         width: 100%;
         top: calc(700px - 60%);
