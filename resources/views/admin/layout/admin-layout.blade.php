@@ -53,8 +53,53 @@
                 </div>
             </div>
             <div class="main-content">
-                <div class="side-nav">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="side-nav-heading">
+                        <h5>Nawigacja</h5>
+                        <hr color="white">
+                    </div>
+                    <div class="side-list">
+                        <div class="side-list-item{{ request()->is('dashboard.index') ? ' active' : '' }}">
+                            <a href="{{ route('dashboard.index') }}">
+                                <div class="list-item-text">Panel główny</div>
+                            </a>
+                        </div>
+                        <div class="side-list-item{{ request()->is('o-nas.index') ? ' active' : '' }}">
+                            <a href="{{ route('o-nas.index') }}">
+                                <div class="list-item-text">Sekcja O nas</div>
+                            </a>
+                        </div>
+                        <div class="side-list-item{{ request()->is('nasze-atuty.index') ? ' active' : '' }}">
+                            <a href="{{ route('nasze-atuty.index') }}">
+                                <div class="list-item-text">Sekcja Nasze atuty</div>
+                            </a>
+                        </div>
+                        <div class="side-list-item{{ request()->is('wspolpraca.index') ? ' active' : '' }}">
+                            <a href="{{ route('wspolpraca.index') }}">
+                                <div class="list-item-text">Sekcja Współpraca</div>
+                            </a>
+                        </div>
+                        <div class="side-list-item{{ request()->is('kontakt.index') ? ' active' : '' }}">
+                            <a href="{{ route('kontakt.index') }}">
+                                <div class="list-item-text">Sekcja Kontakt</div>
+                            </a>
+                        </div>
+                        <div class="side-list-item{{ request()->is('lista-icon.index') ? ' active' : '' }}">
+                            <a href="{{ route('lista-icon.index') }}">
+                                <div class="list-item-text">Lista ikon</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="toggle-menu" onclick="openNav()"><i class="fa fa-bars"></i></span>
+                {{-- <div class="side-nav">
                     <div class="side-nav-wrapper">
+                        <div class="hamburger-menu">
+                            <div class="list-item-icon">
+                                <i class="fa fa-bars" id="menu-icon"></i>
+                            </div>
+                        </div>
                         <div class="side-nav-heading">
                             <h5>Nawigacja</h5>
                             <hr color="white">
@@ -110,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="fillable-content">
                     <div class="content-container">
                         @yield('content')
@@ -178,6 +223,14 @@
             this.classList.add('active');
         });
     });
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 </script>
 
 </html>

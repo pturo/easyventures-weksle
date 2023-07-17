@@ -42,11 +42,11 @@
                 </a>
             </div>
             <div class="grid-item">
-                <a href="#">
+                <a href="{{ route('kontakt.index') }}">
                     <div class="grid-icon">
                         <i class="fa fa-search"></i>
                     </div>
-                    <div class="grid-text">Text</div>
+                    <div class="grid-text">Sekcja Kontakt</div>
                 </a>
             </div>
         </div>
