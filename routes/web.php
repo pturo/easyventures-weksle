@@ -18,6 +18,8 @@ Route::group(['prefix'=>'/'], function() {
     Route::get('', 'IndexController@index')->name('index.index');
     Route::get('/zloz-zapytanie', 'IndexController@create')->name('zloz-zapytanie.create');
     Route::post('/zloz-zapytanie', 'IndexController@store')->name('zloz-zapytanie.store');
+    Route::get('/jak-zlozyc-wniosek', 'PagesController@jakZlozycWniosek')->name('pages.jak-zlozyc-wniosek');
+    Route::get('/jak-splacic-naleznosc', 'PagesController@jakSplacicNaleznosc')->name('pages.jak-splacic-naleznosc');
 });
 
 // Admin panel

@@ -177,6 +177,8 @@
         <section id="nasze-atuty">
             <div class="row">
                 <div class="zalety padding-15">
+                    <h1>Nasze atuty</h1>
+                    <br>
                     {{-- <div class="card-slider">
                         @forelse ($atuty as $atut)
                             <div class="atut-card">
@@ -188,22 +190,21 @@
                             <div class="empty">Nie ma żadnych wpisów.</div>
                         @endforelse
                     </div> --}}
-                    <div class="full-view">
-                        <h1>Nasze atuty</h1>
-                        <br>
-                        <div class="card-grid">
-                            @forelse ($atuty as $atut)
-                                <div class="card-grid-item">
-                                    <i class="{{ $atut->icon }}"></i>
-                                    <div class="more">
-                                        <h1>{{ $atut->name }}</h1>
+                    <div class="grid-tiles">
+                        @forelse ($atuty as $atut)
+                            <div class="wrap-collabsible">
+                                <input id="collapsible{{ $atut->id }}" class="toggle" type="checkbox">
+                                <label for="collapsible{{ $atut->id }}" class="lbl-toggle"><i
+                                        class="{{ $atut->icon }}"></i> {{ $atut->name }}</label>
+                                <div class="collapsible-content">
+                                    <div class="content-inner">
                                         <p>{{ $atut->description }}</p>
                                     </div>
                                 </div>
-                            @empty
-                                <div class="empty">Nie ma żadnych wpisów.</div>
-                            @endforelse
-                        </div>
+                            </div>
+                        @empty
+                            <div class="empty">Nie ma żadnych wpisów.</div>
+                        @endforelse
                     </div>
                 </div>
             </div>
@@ -267,7 +268,7 @@
                             </div>
                             <div class="step">
                                 <div class="center">
-                                    <a href="">
+                                    <a href="/jak-zlozyc-wniosek">
                                         <button>Dowiedz się więcej</button>
                                     </a>
                                 </div>
@@ -328,7 +329,7 @@
                             </div>
                             <div class="step">
                                 <div class="center">
-                                    <a href="">
+                                    <a href="/jak-splacic-naleznosc">
                                         <button>Dowiedz się więcej</button>
                                     </a>
                                 </div>

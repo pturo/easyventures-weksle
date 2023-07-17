@@ -11,6 +11,7 @@
     @endif
     <div class="form-wrapper">
         <form action="{{ route('nasze-atuty.update', [$entry->id]) }}" method="post">
+            {{ method_field('PUT') }}
             @csrf
             <div class="formControl">
                 <label for="icon">Ikona</label>

@@ -54,7 +54,7 @@ class AtutyController extends Controller
     public function edit(string $id)
     {
         $entry = Atuty::find($id);
-        return view('admin.atuty.edit', compact('$entry'));
+        return view('admin.atuty.edit', compact('entry'));
     }
 
     /**
@@ -66,7 +66,7 @@ class AtutyController extends Controller
 
         $entry = Atuty::find($id);
         $entry->icon = $request->get('icon');
-        $entry->name = $reuest->get('name');
+        $entry->name = $request->get('name');
         $entry->description = $request->get('description');
         $entry->save();
 

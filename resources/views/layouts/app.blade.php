@@ -89,7 +89,7 @@
                                 <div class="page-links">
                                     <a href="#">Warunki finansowania</a>
                                     <a href="#">Współpraca</a>
-                                    <a href="/jak-zlozyc-wniosek-o-weksel">Jak złożyć wniosek o weksel?</a>
+                                    <a href="/jak-zlozyc-wniosek">Jak złożyć wniosek o weksel?</a>
                                     <a href="/jak-splacic-naleznosc">Jak spłacić należność?</a>
                                 </div>
                             </div>
