@@ -13,4 +13,12 @@ class PagesController extends Controller
     public function jakSplacicNaleznosc() {
         return view('pages.jak-splacic-naleznosc');
     }
+
+    public function warunkiFinansowania() {
+        return view('pages.warunki-finansowania');
+    }
+
+    public function wspolpraca() {
+        return view('pages.wspolpraca');
+    }
 }

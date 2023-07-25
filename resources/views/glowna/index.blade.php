@@ -350,7 +350,7 @@
                             @if ($wspolpraca != null)
                                 <p>{{ $wspolpraca->content }}</p>
                                 <div class="center">
-                                    <a href="">
+                                    <a href="/wspolpraca">
                                         <button>Dowiedz się więcej</button>
                                     </a>
                                 </div>

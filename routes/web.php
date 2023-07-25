@@ -20,6 +20,8 @@ Route::group(['prefix'=>'/'], function() {
     Route::post('/zloz-zapytanie', 'IndexController@store')->name('zloz-zapytanie.store');
     Route::get('/jak-zlozyc-wniosek', 'PagesController@jakZlozycWniosek')->name('pages.jak-zlozyc-wniosek');
     Route::get('/jak-splacic-naleznosc', 'PagesController@jakSplacicNaleznosc')->name('pages.jak-splacic-naleznosc');
+    Route::get('/warunki-finansowania', 'PagesController@warunkiFinansowania')->name('pages.warunki-finansowania');
+    Route::get('/wspolpraca', 'PagesController@wspolpraca')->name('pages.wspolpraca');
 });
 
 // Admin panel

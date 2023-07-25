@@ -57,8 +57,8 @@
                             <div class="nav-wrapper">
                                 <nav>
                                     <ul class="nav-menu">
-                                        <li><a href="#splaty-weksli">WARUNKI FINANSOWANIA</a></li>
-                                        <li><a href="#wspolpraca">WSPÓŁPRACA</a></li>
+                                        <li><a href="/warunki-finansowania">WARUNKI FINANSOWANIA</a></li>
+                                        <li><a href="/wspolpraca">WSPÓŁPRACA</a></li>
                                         <li><a href="#kontakt">KONTAKT</a></li>
                                         <li>
                                             <div class="nav-phone">
@@ -87,8 +87,8 @@
                             <div class="links">
                                 <h5>Linki</h5>
                                 <div class="page-links">
-                                    <a href="#">Warunki finansowania</a>
-                                    <a href="#">Współpraca</a>
+                                    <a href="/warunki-finansowania">Warunki finansowania</a>
+                                    <a href="/wspolpraca">Współpraca</a>
                                     <a href="/jak-zlozyc-wniosek">Jak złożyć wniosek o weksel?</a>
                                     <a href="/jak-splacic-naleznosc">Jak spłacić należność?</a>
                                 </div>
