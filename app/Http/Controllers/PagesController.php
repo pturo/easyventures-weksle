@@ -21,4 +21,8 @@ class PagesController extends Controller
     public function wspolpraca() {
         return view('pages.wspolpraca');
     }
+
+    public function politykaPrywatnosci() {
+        return view('pages.polityka-prywatnosci');
+    }
 }

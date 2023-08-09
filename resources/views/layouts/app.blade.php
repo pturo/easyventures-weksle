@@ -63,7 +63,7 @@
                                         <li>
                                             <div class="nav-phone">
                                                 <i class="fa fa-phone"></i>
-                                                <a href="tel:123456789">123456789</a>
+                                                <a href="tel:720180180">720 180 180</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -106,7 +106,7 @@
                                 <p>NIP: 5242893955</p>
                                 <div class="footer-phone">
                                     <i class="fa fa-phone"></i>
-                                    <a href="tel:123456789">123456789</a>
+                                    <a href="tel:720180180">720 180 180</a>
                                 </div>
                             </div>
                         </div>
@@ -116,10 +116,10 @@
                 <div class="row">
                     <div class="designed-by padding-15">
                         <div class="sdf">
-                            <span>Realizacja: <a href="https://www.digitalowa.pl/">Agencja Digitalowa</a></span>
+                            <span>Realizacja: <a href="https://www.digitalowa.pl/" target="_blank">Agencja Digitalowa</a></span>
                         </div>
                         <div class="privacy-policy">
-                            <a href="">Polityka prywatności</a>
+                            <a href="/polityka-prywatnosci">Polityka prywatności</a>
                         </div>
                     </div>
                 </div>

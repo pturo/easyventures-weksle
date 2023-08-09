@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WekselMail;
 use App\Models\Atuty;
 use App\Models\ONas;
 use App\Models\Wspolpraca;
@@ -65,7 +67,27 @@ class IndexController extends Controller
             'home-number.integer'=>'Podano nieprawidłowy numer domu/mieszkania.'
         ]);
 
-        return dd($request);
+        try {
+            $data = [
+                'name' => $request->name,
+                'surname' => $request->surname,
+                'email' => $request->email,
+                'city' => $request->city,
+                'zip_code' => $request->get('zip-code'),
+                'street' => $request->street,
+                'home_number' => $request->get('home-number'),
+                'credits' => $request->get('credit-text-2'),
+                'rates'=> $request->get('rate-text-2')
+            ];
+
+            Mail::to("test@naweksel.strondlafirm.hekko24.pl")->send(new WekselMail($data));
+
+            return redirect()->back()->with('success', 'Wiadomość pomyślnie wysłana!');
+        } catch (\Throwable $exception) {
+            return redirect()->back()->with('error-occur', 'Wystąpił problem z wysłaniem wiadomości e-mail!' . $exception);
+        }
+
+        return dd($request->all());
 
         //return redirect()->back();
     }

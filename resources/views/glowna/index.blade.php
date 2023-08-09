@@ -43,17 +43,22 @@
                 <div class="kalkulator padding-15">
                     <h1>Kalkulator</h1>
                     <br>
+                    @if (Session::has('success'))
+                        <div class="success-feedback">{{ Session::get('success') }}</div>
+                    @elseif (Session::has('error-occur'))
+                    <div class="invalid-feedback">{{ Session::get('error-occur') }}</div>
+                    @endif
                     <div class="kalkulator-form">
                         <div class="form-wrapper">
                             <div class="left-form">
                                 <h3>Dobierz parametry weksla</h3>
                                 <div class="sliders">
                                     <label for="credit-val">Kwota weksla</label><br>
-                                    <input id="credit-val" name="credit-val" type="range" min="500" max="2000"
+                                    <input id="credit-val" name="credit-val" type="range" min="500" max="50000"
                                         value="0">
                                     <br>
                                     <label for="rate-val">Okres spłaty</label><br>
-                                    <input id="rate-val" name="rate-val" type="range" min="1" max="36"
+                                    <input id="rate-val" name="rate-val" type="range" min="1" max="48"
                                         value="0">
                                 </div>
                                 <br>
@@ -150,16 +155,14 @@
                                     <div id="credits-input-wrapper" class="form-control">
                                         <label for="credits">Kwota weksla</label>
                                         <div id="credits-input" class="custom-input">
-                                            <div><input id="credits" name="rate-text" type="text" value="0"
-                                                    disabled> pln
+                                            <div><input readonly id="credits" name="credit-text-2" type="text" value="0"> pln
                                             </div>
                                         </div>
                                     </div>
                                     <div id="rate-input-wrapper" class="form-control">
                                         <label for="rate">Okres spłaty</label>
                                         <div id="rate-input" class="custom-input">
-                                            <div><input id="rate" name="rate-text" type="text" value="0"
-                                                    disabled> mc
+                                            <div><input readonly id="rate" name="rate-text-2" type="text" value="0"> mc
                                             </div>
                                         </div>
                                     </div>

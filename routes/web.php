@@ -22,6 +22,7 @@ Route::group(['prefix'=>'/'], function() {
     Route::get('/jak-splacic-naleznosc', 'PagesController@jakSplacicNaleznosc')->name('pages.jak-splacic-naleznosc');
     Route::get('/warunki-finansowania', 'PagesController@warunkiFinansowania')->name('pages.warunki-finansowania');
     Route::get('/wspolpraca', 'PagesController@wspolpraca')->name('pages.wspolpraca');
+    Route::get('/polityka-prywatnosci', 'PagesController@politykaPrywatnosci')->name('pages.polityka-prywatnosci');
 });
 
 // Admin panel

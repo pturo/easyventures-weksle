@@ -76,6 +76,24 @@ input:disabled {
 
 /* DIV CLASSES */
 /* global styles */
+.invalid-feedback {
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+    background-color: rgb(109, 1, 1);
+    color: red;
+}
+
+.success-feedback {
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid limegreen;
+    background-color: green;
+    color: limegreen;
+}
+
 .empty {
     color: red;
     text-align: center;
@@ -1025,6 +1043,10 @@ label.home-number {
 }
 
 .warunki-finansowania {
+    padding-top: 130px;
+}
+
+.polityka-prywatnosci {
     padding-top: 130px;
 }
 
