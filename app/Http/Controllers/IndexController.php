@@ -84,7 +84,7 @@ class IndexController extends Controller
 
             return redirect()->back()->with('success', 'Wiadomość pomyślnie wysłana!');
         } catch (\Throwable $exception) {
-            return redirect()->back()->with('error-occur', 'Wystąpił problem z wysłaniem wiadomości e-mail!' . $exception);
+            return redirect()->back()->with('error-occur', 'Wystąpił problem z wysłaniem wiadomości e-mail!');
         }
 
         return dd($request->all());
