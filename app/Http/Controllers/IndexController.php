@@ -80,7 +80,7 @@ class IndexController extends Controller
                 'rates'=> $request->get('rate-text-2')
             ];
 
-            Mail::to("test@naweksel.strondlafirm.hekko24.pl")->send(new WekselMail($data));
+            Mail::to("kontakt@naweksel.pl")->send(new WekselMail($data));
 
             return redirect()->back()->with('success', 'Wiadomość pomyślnie wysłana!');
         } catch (\Throwable $exception) {
