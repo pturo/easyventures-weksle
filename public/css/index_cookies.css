@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);
+:root {
+  --color: #000;
+  --acp-background: #f3f3f3;
+  --acp-content-background: #fff;
+  --acp-button-color-1: #099627;
+  --acp-button-color-2: #fff;
+  --acp-button-color-3: #382121;
+}
+.advancedCookiesPopup__button--red,
+.advancedCookiesPopup__button--simple,
+.advancedCookiesPopup__button--white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-right: 15px;
+}
+@media only screen and (min-width: 900px) {
+  .advancedCookiesPopup__button--red,
+  .advancedCookiesPopup__button--simple,
+  .advancedCookiesPopup__button--white {
+    width: 275px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .advancedCookiesPopup__button--red,
+  .advancedCookiesPopup__button--simple,
+  .advancedCookiesPopup__button--white {
+    width: 250px;
+    height: 35px;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+.advancedCookiesPopup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-family: Manrope, sans-serif;
+  z-index: 99999;
+}
+.advancedCookiesPopup h1,
+.advancedCookiesPopup h2,
+.advancedCookiesPopup p,
+.advancedCookiesPopup span {
+  font-size: 1.5rem;
+  color: #000;
+}
+.advancedCookiesPopup p a,
+.advancedCookiesPopup span a {
+  color: #000;
+}
+.advancedCookiesPopup__subtitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+.advancedCookiesPopup__all-settings {
+  height: 290px;
+  overflow-y: scroll;
+}
+.advancedCookiesPopup a.link {
+  color: var(--acp-button-color-1);
+}
+.advancedCookiesPopup__settings-item {
+  margin-top: 35px;
+  line-height: 26px;
+  letter-spacing: 0.4px;
+}
+@media only screen and (min-width: 900px) {
+  .advancedCookiesPopup__top {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .advancedCookiesPopup__top {
+    display: block;
+  }
+}
+.advancedCookiesPopup__h2 {
+  margin: 0 12px 0 0 !important;
+  font-family: Manrope, sans-serif !important;
+  text-transform: none !important;
+  font-size: 24px !important;
+  border: 0 !important;
+  display: block !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+}
+.advancedCookiesPopup__settings {
+  height: 310px;
+}
+.advancedCookiesPopup__inside {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 900px) {
+  .advancedCookiesPopup__inside {
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .advancedCookiesPopup__inside {
+    align-items: flex-end;
+  }
+}
+.advancedCookiesPopup__blurScreen {
+  background-color: #000000c9;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 200;
+}
+.advancedCookiesPopup__content {
+  background-color: var(--acp-background);
+  z-index: 201;
+  position: relative;
+}
+@media only screen and (min-width: 900px) {
+  .advancedCookiesPopup__content {
+    width: 900px;
+    height: 490px;
+    padding: 40px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .advancedCookiesPopup__content {
+    max-width: 900px;
+    /* height: -webkit-max-content;
+    height: -moz-max-content; */
+    height: 500px !important;
+    padding: 31px;
+    width: 100vw;
+  }
+}
+.advancedCookiesPopup__logo {
+  max-width: 190px;
+}
+.advancedCookiesPopup__title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 900px) {
+  .advancedCookiesPopup__title {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .advancedCookiesPopup__title {
+    font-size: 16px;
+  }
+}
+.advancedCookiesPopup__message-content {
+  font-size: 16px;
+  line-height: 25px;
+  color: #2c2c2c;
+  letter-spacing: 0.3;
+  overflow-y: scroll;
+  background: var(--acp-content-background);
+}
+.advancedCookiesPopup__message-content a {
+  color: #1b1e4a;
+}
+@media only screen and (min-width: 900px) {
+  .advancedCookiesPopup__message-content {
+    height: max-content;
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .advancedCookiesPopup__message-content {
+    height: 28vh;
+    padding: 5px;
+    overflow-y: scroll;
+  }
+}
+.advancedCookiesPopup__buttons {
+  margin-top: 20px;
+}
+.advancedCookiesPopup__button--white {
+  background-color: var(--acp-button-color-2);
+  color: #373737;
+}
+.advancedCookiesPopup__button--white:hover {
+  color: #373737;
+}
+.advancedCookiesPopup__button--simple {
+  background-color: var(--acp-button-color-1);
+  color: var(--acp-button-color-2);
+}
+.advancedCookiesPopup__button--simple:hover {
+  color: var(--acp-button-color-2);
+}
+.advancedCookiesPopup__button--red {
+  background-color: var(--acp-button-color-3);
+  color: var(--acp-button-color-2);
+}
+.advancedCookiesPopup__button--red:hover {
+  color: var(--acp-button-color-2);
+}
