@@ -29,7 +29,12 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('glowna.index');
+        $atuty = Atuty::all();
+        $onas = ONas::latest()->first();
+        $wspolpraca = Wspolpraca::latest()->first();
+        $kontakt = Kontakt::all();
+
+        return view('glowna.index', compact('atuty', 'onas', 'wspolpraca', 'kontakt'));
     }
 
     /**
