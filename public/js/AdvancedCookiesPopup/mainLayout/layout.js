@@ -20,7 +20,6 @@ const Layout = () => {
             </div>
         </div>
     `;
-    window.ModuleSwitchHandler();
     return layout;
 }
 

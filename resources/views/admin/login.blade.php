@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zaloguj się do panelu administratora</title>
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-</head>
-
-<body>
-    <div class="login-wrapper">
+@extends('admin.layout.auth-layout')
+@section('title', 'Zaloguj się do panelu')
+@section('content')
+<div class="login-wrapper">
         <div class="background-theme"></div>
         <div class="login-form">
             @if (Session::has('message'))
@@ -20,19 +11,19 @@
                 <div class="logo">
                     <img src="{{ asset('img/easyventure-logo-rb.png') }}" alt="easyventures-logo" height="175px">
                 </div>
-                <h1 style="color: #bf9e87;">Zaloguj się do panelu administratora</h1>
+                <h1 style="color: #bf9e87;">Zaloguj się</h1>
                 <form method="post" action="{{ route('login.store') }}">
                     @csrf
                     <div class="form-control">
-                        <label for="email">EMAIL</label>
-                        <input type="email" name="email" placeholder="E-mail">
+                        <label for="email">E-MAIL</label>
+                        <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="E-mail" autocomplete="email" required>
                     </div>
                     @error('email')
                         <div class="invalid-feedback" role="alert">{{ $message }}</div>
                     @enderror
                     <div class="form-control">
                         <label for="password">HASŁO</label>
-                        <input type="password" name="password" placeholder="Hasło">
+                        <input type="password" id="password" name="password" placeholder="Hasło" autocomplete="current-password" required>
                     </div>
                     @error('password')
                         <div class="invalid-feedback" role="alert">{{ $message }}</div>
@@ -40,10 +31,12 @@
                     <div class="form-control">
                         <button>Zaloguj się</button>
                     </div>
+                    <div class="form-control">
+                        <span>Nie masz konta? </span>
+                        <a href="/admin/register">Załóż tutaj</a>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

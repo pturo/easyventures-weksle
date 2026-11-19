@@ -1,66 +1,155 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Easy Ventures - Weksel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Nowoczesna aplikacja webowa dla usług finansowych opartych na wekslach. Projekt umożliwia obliczenie parametrów finansowania, złożenie zapytania oraz zarządzanie treścią strony w prostym panelu administracyjnym.
 
-## About Laravel
+## Zrzuty ekranu
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Strona glowna i kalkulator
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Strona glowna z kalkulatorem](docs/home.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Kalkulator pozwala podać kwotę weksla i okres spłaty. Formularz zapytania zbiera dane klienta i przekazuje je do wysłania pocztą e-mail.
 
-## Learning Laravel
+### Panel logowania
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![Panel logowania administratora](docs/login-panel.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Administrator może zalogować się do systemu CMS i zarządzać zawartością serwisu.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Panel administracyjny
 
-## Laravel Sponsors
+![Panel administracyjny](docs/dashboard.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Panel pozwala edytować sekcje: **O nas**, **Nasze atuty**, **Współpraca** i **Kontakt**, a także przeglądać dostępne ikony Font Awesome.
 
-### Premium Partners
+### Widok mobilny
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![Widok mobilny aplikacji](docs/mobile.png)
 
-## Contributing
+Interfejs dostosowuje się do urządzeń mobilnych, zachowując dostępność formularzy i panelu administracyjnego.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Funkcjonalności
 
-## Code of Conduct
+- kalkulator parametrów weksla,
+- formularz złożenia zapytania,
+- wysyłanie zapytania pocztą e-mail,
+- strony z warunkami finansowania i instrukcjami,
+- sekcja współpracy i polityka prywatności,
+- logowanie i rejestracja administratorów,
+- panel CMS do zarządzania treścią strony,
+- zmiana motywu jasnego i ciemnego w panelu,
+- responsywne widoki desktopowe i mobilne.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Technologie
 
-## Security Vulnerabilities
+- PHP 8.1+
+- Laravel 10
+- MySQL / MariaDB
+- Bootstrap 5
+- Sass
+- Vite
+- Font Awesome
+- PHPUnit
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Wymagania
 
-## License
+- PHP 8.1 lub nowszy,
+- Composer,
+- Node.js i npm,
+- MySQL lub MariaDB,
+- serwer WWW, np. Apache z XAMPP.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Instalacja lokalna
+
+1. Sklonuj repozytorium i przejdź do katalogu projektu:
+
+   ```bash
+   cd easyventures-weksle
+   ```
+
+2. Zainstaluj zależności PHP i JavaScript:
+
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. Utwórz plik konfiguracyjny:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Na Windows w PowerShell można zamiast tego wykonać:
+
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+
+4. Wygeneruj klucz aplikacji:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. Utwórz bazę danych MySQL i ustaw w `.env` parametry `DB_DATABASE`, `DB_USERNAME` oraz `DB_PASSWORD`.
+
+6. Uruchom migracje:
+
+   ```bash
+   php artisan migrate
+   ```
+
+7. Skonfiguruj serwer pocztowy. Domyślnie formularz wysyła zapytanie na adres `kontakt@naweksel.pl`; ustaw dane SMTP w zmiennych `MAIL_*` pliku `.env`.
+
+8. Uruchom serwer Vite i aplikację Laravel:
+
+   ```bash
+   npm run dev
+   ```
+
+   W drugim terminalu:
+
+   ```bash
+   php artisan serve
+   ```
+
+Aplikacja będzie domyślnie dostępna pod adresem `http://127.0.0.1:8000`.
+
+Przy uruchamianiu aplikacji przez XAMPP umieść projekt w katalogu `htdocs` i wejdź pod adres odpowiadający lokalnej ścieżce projektu.
+
+## Najważniejsze adresy
+
+| Adres | Opis |
+| --- | --- |
+| `/` | Strona główna i kalkulator |
+| `/zloz-zapytanie` | Formularz złożenia zapytania |
+| `/warunki-finansowania` | Warunki finansowania |
+| `/jak-zlozyc-wniosek` | Instrukcja złożenia wniosku |
+| `/jak-splacic-naleznosc` | Instrukcja spłaty |
+| `/wspolpraca` | Informacje o współpracy |
+| `/polityka-prywatnosci` | Polityka prywatności |
+| `/admin/login` | Logowanie do panelu administracyjnego |
+| `/admin/dashboard` | Panel zarządzania treścią |
+
+## Budowanie zasobów
+
+Podczas tworzenia uruchom serwer developerski Vite:
+
+```bash
+npm run dev
+```
+
+Gotową wersję zasobów CSS i JavaScript utworzysz poleceniem:
+
+```bash
+npm run build
+```
+
+## Testy
+
+Uruchom testy projektu poleceniem:
+
+```bash
+php artisan test
+```

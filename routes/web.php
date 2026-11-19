@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,13 @@ Route::group(['prefix'=>'/'], function() {
 Route::group(['prefix'=>'admin'], function() {
     Route::get('/login', 'LoginController@index')->name('login.index');
     Route::post('/login', 'LoginController@store')->name('login.store');
-    Route::post('/logout', 'LoginController@logout')->name('login.logout');
+
+    Route::get('/register', function () {
+        return view('admin.register');
+    });
+
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.create');
+    
     Route::get('/dashboard', 'AdminController@index')->middleware('auth', 'verified')->name('dashboard.index');
     // Główna: O Nas
     Route::resource('o-nas', 'ONasController')->middleware('auth', 'verified');
@@ -41,6 +48,9 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('kontakt', 'KontaktController')->middleware('auth', 'verified');
     // Lista ikon
     Route::get('lista-ikon', 'ListaIkonController@index')->middleware('auth', 'verified')->name('lista-icon.index');
+
+    // Logout
+    Route::post('/logout', 'LoginController@logout')->name('login.logout');
 });
 
 

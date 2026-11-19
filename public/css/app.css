@@ -22,6 +22,21 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+    min-width: 320px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+iframe,
+table,
+.container,
+.row {
+    max-width: 100%;
+}
+
 nav {
     text-align: center;
 }
@@ -1343,5 +1358,112 @@ label.home-number {
 
     .footer .designed-by .privacy-policy {
         justify-content: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .header {
+        padding: 8px 0;
+    }
+
+    .header .nav-items-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .logo,
+    .header .nav-wrapper {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header .logo img {
+        width: 120px;
+        height: 72px;
+    }
+
+    .header .nav-menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 4px 0 0;
+    }
+
+    .header .nav-menu > li {
+        margin: 2px 6px;
+    }
+
+    .glowna,
+    .jak-zlozyc-wniosek,
+    .jak-splacic-naleznosc,
+    .wspolpracuj-z-nami,
+    .warunki-finansowania,
+    .polityka-prywatnosci {
+        padding-top: 180px;
+    }
+
+    .card-wrapper {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .card-wrapper .invisible {
+        display: none;
+    }
+
+    .card-wrapper .card-placeholder {
+        width: 100%;
+        padding: 24px 12px;
+    }
+
+    .glowna #o-firmie {
+        height: auto !important;
+        min-height: 700px;
+    }
+
+    #nasze-atuty .zalety {
+        height: auto;
+        min-height: 700px;
+        padding: 30px 0;
+    }
+
+    .kalkulator-form {
+        padding: 10px 12px;
+    }
+
+    .kalkulator-form .form-wrapper .left-form,
+    .kalkulator-form .form-wrapper .right-form {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .right-form > img {
+        max-width: 220px;
+        height: auto;
+    }
+
+    .wide-form > .form-control,
+    #city-inner,
+    #zip-inner,
+    #street-inner,
+    #home-inner {
+        width: 100%;
+    }
+
+    #city,
+    #zip-code,
+    #street,
+    #home-number {
+        width: 100% !important;
+    }
+
+    .wspolpraca-card .content {
+        padding: 20px 16px;
+    }
+
+    .error {
+        width: 100%;
     }
 }

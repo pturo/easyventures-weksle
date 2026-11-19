@@ -4,6 +4,10 @@ import { addCheckedCookies } from "./Cookies.js";
 const moduleSwitchHandler = async (view = null) => {
     const ACPContainer = await document.querySelector(".advancedCookiesPopup__container");
 
+    if (!ACPContainer) {
+        return;
+    }
+
     ACPContainer.innerHTML !== '' ? ACPContainer.innerHTML = '' : null;
 
     

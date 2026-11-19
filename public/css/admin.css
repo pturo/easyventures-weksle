@@ -21,6 +21,19 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+    min-width: 320px;
+}
+
+img,
+table,
+input,
+textarea,
+button {
+    max-width: 100%;
+}
+
 label,
 a {
     color: var(--text-color);
@@ -133,11 +146,47 @@ table {
     margin-bottom: 10px;
 }
 
+.form-control span {
+    color: var(--secondary-color);
+}
+
+.form-control a:hover {
+    color: var(--hover-color);
+}
+
 .form-control > input {
     height: 40px;
     border: 1px solid #bf9e87;
     border-radius: 10px;
     padding: 10px 10px;
+}
+
+.register-form {
+    width: 100%;
+}
+
+.register-form .form-control {
+    display: grid;
+    grid-template-columns: minmax(150px, 180px) minmax(220px, 1fr);
+    align-items: center;
+    gap: 12px;
+}
+
+.register-form .form-control label {
+    text-align: right;
+}
+
+.register-form .form-control input {
+    width: 100%;
+}
+
+.register-form .form-control:last-child {
+    grid-template-columns: minmax(150px, 180px) minmax(220px, 1fr);
+}
+
+.register-form .form-control:last-child button {
+    grid-column: 2;
+    justify-self: start;
 }
 
 /* theme colors for dashboard*/
@@ -904,10 +953,48 @@ textarea {
 @media (max-width: 900px) {
     .login-wrapper {
         flex-direction: column;
+        height: auto;
+        min-height: 100vh;
     }
 
     .login-wrapper .background-theme {
         background-position-y: 20%;
+        height: 32vh;
+        min-height: 220px;
+        flex: 0 0 auto;
+    }
+
+    .login-wrapper .login-form {
+        height: auto;
+        min-height: 68vh;
+        padding: 24px 16px;
+    }
+
+    .login-wrapper .login-form .form-content {
+        width: min(420px, 100%);
+        padding: 10px 0;
+    }
+
+    .login-wrapper .login-form .form-content .logo img {
+        height: 140px;
+        width: auto;
+    }
+
+    .login-wrapper .login-form .form-control {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .login-wrapper .login-form .form-control label {
+        width: 100%;
+    }
+
+    .login-wrapper .login-form .form-control input {
+        width: 100%;
     }
 
     .container .header {
@@ -925,6 +1012,7 @@ textarea {
 
     .sidenav {
         padding-top: 120px;
+        top: 140px;
     }
 
     .sidenav .closebtn {
@@ -976,5 +1064,78 @@ textarea {
     .container .main-content .fillable-content {
         max-width: calc(100% - 54px);
         transition: max-width 0.3s;
+    }
+
+    .container .header .header-wrapper {
+        padding: 8px 12px;
+    }
+
+    .container .header .header-wrapper .logo a img {
+        width: 120px;
+        height: auto;
+    }
+
+    .container .header .header-wrapper .header-tools,
+    .container .header .header-wrapper .header-tools .user-profile {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container .header .header-wrapper .header-tools .theme-switcher {
+        display: none;
+    }
+
+    .container .main-content .fillable-content .content-container {
+        padding: 16px 12px;
+    }
+
+    .container
+        .main-content
+        .fillable-content
+        .content-container
+        .form-wrapper {
+        padding: 16px 12px;
+    }
+
+    .container
+        .main-content
+        .fillable-content
+        .content-container
+        .form-wrapper
+        form
+        .formControl {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .container
+        .main-content
+        .fillable-content
+        .content-container
+        .form-wrapper
+        form
+        .formControl
+        input,
+    .container
+        .main-content
+        .fillable-content
+        .content-container
+        .form-wrapper
+        form
+        .formControl
+        textarea {
+        width: 100%;
+    }
+
+    .container
+        .main-content
+        .fillable-content
+        .content-container
+        .general-wrapper
+        .list-of-sections
+        .entries
+        .entry-card
+        .options {
+        width: 100%;
     }
 }
