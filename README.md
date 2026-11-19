@@ -153,3 +153,7 @@ Uruchom testy projektu poleceniem:
 ```bash
 php artisan test
 ```
+
+## Licencja
+
+Projekt jest udostępniony na licencji MIT. Szczegóły znajdują się w pliku [LICENSE](LICENSE).
